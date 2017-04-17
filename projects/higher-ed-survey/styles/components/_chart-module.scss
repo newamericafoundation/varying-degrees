@@ -1,0 +1,14 @@
+.chart-module {
+	width: 70%;
+	display: table-cell;
+	vertical-align: top;
+	padding: 0px 25px;
+
+	&__title-block {
+		padding: 20px 0px;
+		&__title {
+			font-size: 20px;
+
+		}
+	}
+}

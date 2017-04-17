@@ -1,0 +1,27 @@
+.filter {
+/*	&__select {
+		border: 1px solid palette-get(na-black-10);
+		padding: 0rem 0.8rem;
+		background-position-x: 98%;
+	}*/
+
+	.Select-control {
+		border-radius: 0px;
+		border: 1px solid palette-get(na-black-10);
+		cursor: pointer;
+	}
+	.Select-option {
+		&.is-focused {
+			background-color: palette-get(na-turquoise-opacity-1);
+		}
+		&.is-selected {
+			background-color: palette-get(na-turquoise-opacity-3);
+		}
+
+	}
+
+	.is-focused:not(.is-open) > .Select-control {
+		border-color: palette-get(na-black-10);
+		box-shadow: none;
+	}
+}
