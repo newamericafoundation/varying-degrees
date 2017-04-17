@@ -11,4 +11,10 @@
 
 		}
 	}
+
+	&__footer-note {
+		font-size: 12px;
+		font-style: italic;
+		color: palette-get(na-black-40);
+	}
 }

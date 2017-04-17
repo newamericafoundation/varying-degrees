@@ -7,7 +7,6 @@
     "test": "",
     "start": "node server",
     "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint ."
   },
   "keywords": [
     "es6",
@@ -25,7 +24,8 @@
     "react-router": "^2.4.0",
     "react-router-redux": "^4.0.4",
     "react-select": "^1.0.0-rc.3",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "svg-react": "^1.0.9"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

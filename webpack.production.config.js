@@ -68,7 +68,11 @@ module.exports = {
             // we extract the styles into their own .css file instead of having
             // them inside the js.
             loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass')
-        }, {
+        }, 
+        { 
+            test: /\.svg$/, loader: 'svg-react' 
+        },
+        {
             test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
             loader: 'url?limit=10000&mimetype=application/font-woff'
         }, {

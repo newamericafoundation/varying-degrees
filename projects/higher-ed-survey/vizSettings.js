@@ -46,6 +46,107 @@ const vizSettings = [
       },
     ] 
   },
+  { 
+    topic: 'Sector-by-Sector', 
+    questions: [
+      { 
+        text: "Agree or disagree: [Institution type] are for people in my situation.",
+        subquestions: [
+          { text: "Two-year community colleges"},
+          { text: "Four-year public colleges or universities"},
+          { text: "Four-year private colleges or universities"},
+          { text: "For-profit colleges or universities"},
+        ]
+      },
+      { 
+        text: "Agree or disagree: [Institution type] prepare people to be successful.",
+        subquestions: [
+          { text: "Two-year community colleges"},
+          { text: "Four-year public colleges or universities"},
+          { text: "Four-year private colleges or universities"},
+          { text: "For-profit colleges or universities"},
+        ]
+      },
+      { 
+        text: "Agree or disagree: [Institution type] are worth the cost.",
+        subquestions: [
+          { text: "Two-year community colleges"},
+          { text: "Four-year public colleges or universities"},
+          { text: "Four-year private colleges or universities"},
+          { text: "For-profit colleges or universities"},
+        ]
+      },
+      { 
+        text: "Agree or disagree: [Institution type] contribute to a strong American workforce.",
+        subquestions: [
+          { text: "Two-year community colleges"},
+          { text: "Four-year public colleges or universities"},
+          { text: "Four-year private colleges or universities"},
+          { text: "For-profit colleges or universities"},
+        ]
+      },
+      { 
+        text: "Agree or disagree: [Institution type] always put their students first.",
+        subquestions: [
+          { text: "Two-year community colleges"},
+          { text: "Four-year public colleges or universities"},
+          { text: "Four-year private colleges or universities"},
+          { text: "For-profit colleges or universities"},
+        ]
+      },
+    ] 
+  },
+  { 
+    topic: 'Purpose & Accountability', 
+    questions: [
+      { 
+        text: "In your opinion, is higher education mainly about getting a degree or gaining knowledge?",
+      },
+      { 
+        text: "In your opinion, is a higher education system good for society or is higher education mostly a private benefit for individual graduates?",
+      },
+      { 
+        text: "Which of the following is closer to your point of view regarding success of students in higher education? The student is solely responsible, or the university needs to assist in the success of its students.",
+      },
+      { 
+        text: "In your opinion, do higher education leaders generally put the needs and interests of students first or put the long-term interests of their schools first?",
+      },
+      { 
+        text: "Agree or disagree: Higher education in America is fine how it is.",
+      },
+      { 
+        text: "Agree or disagree: All Americans have a decent chance of getting into a good college.",
+      },
+      { 
+        text: "Agree or disagree: Most people who enroll in higher education benefit.",
+      },
+    ] 
+  },
+  { 
+    topic: 'Government Involvement', 
+    questions: [
+      { 
+        text: "Agree or disagree: The federal government is having a positive impact on the higher education system.",
+      },
+      { 
+        text: "Agree or disagree: My state government is having a positive impact on the higher education system.",
+      },
+      { 
+        text: "Agree or disagree: Higher education institutions in my state should act with greater independence from the government.",
+      },
+    ] 
+  },
+  { 
+    topic: 'Paying for College', 
+    questions: [
+      { 
+        text: "How confident, if at all, are you that you made the right financial decisions regarding how you are paying or paid for college?",
+      },
+      { 
+        text: "Did you use any sources to help you pay for your higher education?",
+      },
+    ] 
+  },
 ];
 
 export default vizSettings;
