@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 import ChartDataContainer from '../containers/ChartDataContainer';
 
 const ChartSubquestionGroup = ({ settingsObject }) => {
-    console.log(settingsObject);
     let charts = [];
 
     if (settingsObject.subquestions) {
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
-            charts.push(<h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>)
+            charts.push(<h5 key={i + "heading"} className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>)
     		charts.push(<ChartDataContainer key={i} settingsObject={subquestionSettings} />);
     	})
     } else {

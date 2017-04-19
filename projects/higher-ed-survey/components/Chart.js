@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+
 import { scaleLinear } from 'd3-scale';
 import formatValue from '../utilities/format_value';
 
@@ -9,26 +9,8 @@ class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.resizeFunc = this.resize.bind(this);
-
 		this.initializeXScale();
-
-		this.state = {
-			width: 0,
-			height: 0
-		}
 	}
-
-	componentDidMount() {
-        $(window).resize(this.resizeFunc);
-
-        let w = this.getCurrWidth();
-		let h = this.getCurrHeight(w);
-        this.setState({
-            width: w,
-            height: h
-        })
-    }
 
 	initializeXScale() {
 		const { data } = this.props;
@@ -38,28 +20,25 @@ class Chart extends React.Component {
 			.domain([0, data.total_respondents])
 	}
 
-	// setXScaleRange() {
-	// 	this.xScale.range([0, this.state.width]);
-	// }
 
 	render() {
-		const { data } = this.props;
+		const { data, yTransform, width } = this.props;
 		console.log("in chart!");
 
-		this.xScale.range([0, this.state.width]);
+		this.xScale.range([0, width]);
 
 		let rects = this.buildRects();
 
 		return (
-			<svg className="chart" width="100%" height={this.state.height + margin.top} ref="renderingArea">
+			<g className="chart" transform={"translate(0," + yTransform + ")"}>
 				<text className="chart__filter-label" x="0" y="3" fill="black">{data.display_name}</text>
 				{rects}
-			</svg>
+			</g>
 		)
 	}
 
 	buildRects() {
-		const { settings, data } = this.props;
+		const { settings, data, height } = this.props;
 		console.log(data);
 		console.log(settings);
 		let rects = [];
@@ -73,14 +52,14 @@ class Chart extends React.Component {
 				x: 0,
 				y: 0,
 				width: elemWidth,
-				height: this.state.height,
+				height: height,
 				fill: varSettings.color
 			}
 
 			rects.push(
-				<g transform={ "translate(" + currX + "," + margin.top + ")" }>
+				<g key={i} transform={ "translate(" + currX + "," + margin.top + ")" }>
 					<rect {...props} />
-					<text className="chart__data__label" x="7" y={this.state.height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
+					<text className="chart__data__label" x="7" y={height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
 				</g>
 			)
 			currX += elemWidth;
@@ -88,25 +67,6 @@ class Chart extends React.Component {
 
 		return rects;
 	}
-
-	resize() {
-		let w = this.getCurrWidth();
-		let h = this.getCurrHeight(w);
-        this.setState({
-            width: w,
-            height: h
-        })
-	}
-
-	getCurrWidth() {
-        return $(this.refs.renderingArea).width() - margin.left - margin.right;
-    }
-
-    getCurrHeight(w) {
-    	let h = w/15 > 35 ? 35 : w/15;
-		h = h < 25 ? 25 : h;
-        return h;
-    }
 }
 
 export default Chart;
