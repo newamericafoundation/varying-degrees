@@ -1,3 +1,5 @@
+import colors from './utilities/colors.js';
+
 const vizSettings = [
   { 
     topic: 'Higher Education & the Economy', 
@@ -9,12 +11,12 @@ const vizSettings = [
             text: "Finding a good paying job", 
             collection: "higher_ed_economy_0_0",
             variables: [
-              {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
-              {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
-              {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
-              {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
-              {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
-              {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
+              {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
+              {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
+              {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+              {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
+              {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
+              {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
             ]
           },
           // { 

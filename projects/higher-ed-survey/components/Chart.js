@@ -1,8 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 import { scaleLinear } from 'd3-scale';
+import formatValue from '../utilities/format_value';
 
-const margin = {top: 20, right: 0, bottom: 30, left: 60};
+const margin = {top: 15, right: 0, bottom: 30, left: 0};
 
 class Chart extends React.Component {
 	constructor(props) {
@@ -22,9 +23,10 @@ class Chart extends React.Component {
         $(window).resize(this.resizeFunc);
 
         let w = this.getCurrWidth();
+		let h = this.getCurrHeight(w);
         this.setState({
             width: w,
-            height: w/10
+            height: h
         })
     }
 
@@ -50,7 +52,7 @@ class Chart extends React.Component {
 
 		return (
 			<svg className="chart" width="100%" height={this.state.height + margin.top} ref="renderingArea">
-				<text className="chart__filter-label" x="0" y="0" fill="black">{data.category}</text>
+				<text className="chart__filter-label" x="0" y="3" fill="black">{data.display_name}</text>
 				{rects}
 			</svg>
 		)
@@ -64,31 +66,46 @@ class Chart extends React.Component {
 		let currX = 0;
 
 		settings.variables.forEach((varSettings, i) => {
-			let elemWidth = this.xScale(data[varSettings.variable])
+			const dataVal = data[varSettings.variable];
+			let elemWidth = this.xScale(dataVal)
 			let props = {
-				className: "chart__data-rect",
-				x: currX,
-				y: margin.top,
+				className: "chart__data__rect",
+				x: 0,
+				y: 0,
 				width: elemWidth,
 				height: this.state.height,
 				fill: varSettings.color
 			}
 
-			currX += elemWidth;
 			rects.push(
-				<rect {...props} />
+				<g transform={ "translate(" + currX + "," + margin.top + ")" }>
+					<rect {...props} />
+					<text className="chart__data__label" x="7" y={this.state.height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
+				</g>
 			)
+			currX += elemWidth;
 		})
 
 		return rects;
 	}
 
 	resize() {
-
+		let w = this.getCurrWidth();
+		let h = this.getCurrHeight(w);
+        this.setState({
+            width: w,
+            height: h
+        })
 	}
 
 	getCurrWidth() {
         return $(this.refs.renderingArea).width() - margin.left - margin.right;
+    }
+
+    getCurrHeight(w) {
+    	let h = w/15 > 35 ? 35 : w/15;
+		h = h < 25 ? 25 : h;
+        return h;
     }
 }
 

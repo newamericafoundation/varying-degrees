@@ -1,5 +1,21 @@
 .chart {
 	&__filter-label {
 		alignment-baseline: hanging;
+		fill: palette-get(na-black-70);
+		font-size: 12px;
+	}
+
+	&__data {
+		&__rect {
+			opacity: 1;
+			stroke: white;
+		}
+
+		&__label {
+			fill: white;
+			alignment-baseline: middle;
+			font-size: 12px;
+			/*font-weight: bold;*/
+		}
 	}
 }
