@@ -5,20 +5,67 @@ const vizSettings = [
       { 
         text: "Compared to when your parents were your age, do you think doing the following goals have gotten easier to attain, harder to attain, or are about the same?",
         subquestions: [
-          { text: "Finding a good paying job"},
-          { text: "Getting a good education"},
-          { text: "Being able to afford a family"},
-          { text: "Being treated with respect by society"},
+          { 
+            text: "Finding a good paying job", 
+            collection: "higher_ed_economy_0_0",
+            variables: [
+              {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
+              {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
+              {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
+              {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
+              {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
+              {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
+            ]
+          },
+          // { 
+          //   text: "Getting a good education", 
+          //   collection: "higher_ed_economy_0_0",
+          //   variables: [
+          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
+          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
+          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
+          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
+          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
+          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
+          //   ]
+          // },
+          // { 
+          //   text: "Being able to afford a family", 
+          //   collection: "higher_ed_economy_0_0",
+          //   variables: [
+          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
+          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
+          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
+          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
+          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
+          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
+          //   ]
+          // },
+          // { 
+          //   text: "Being treated with respect by society", 
+          //   collection: "higher_ed_economy_0_0",
+          //   variables: [
+          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
+          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
+          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
+          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
+          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
+          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
+          //   ]
+          // },
         ]
       },
       { 
         text: "Agree or disagree: There are lots of good-paying jobs that do not require college.",
+        collection: "higher_ed_economy_0_0"
       },
       { 
         text: "Agree or disagree: American society respects people who did not go to college.",
+        collection: "higher_ed_economy_0_0"
       },
       { 
         text: "Agree or disagree: It is easier to be successful with a college degree than without.",
+        collection: "higher_ed_economy_0_0"
       },
     ] 
   },
@@ -28,7 +75,7 @@ const vizSettings = [
       { 
         text: "To the best of your knowledge, please tell me if the following statements about higher education funding are true or false.",
         subquestions: [
-          { text: "State governments have increased their spending on higher education in the last ten years. "},
+          { text: "State governments have increased their spending on higher education in the last ten years."},
           { text: "The federal government has increased its spending on higher education in the last ten years."},
           { text: "Students pay the majority of the costs (tuition, room and board, etc.) involved in their higher education."},
           { text: "Government currently pays less than half the costs associated with higher education."},

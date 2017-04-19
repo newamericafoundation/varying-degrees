@@ -2,7 +2,7 @@ import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
 import * as types from '../actions/types';
 
-const filter = (state = '', action) => {
+const filter = (state = {value:"all"}, action) => {
     switch (action.type) {
         case types.CHANGE_FILTER:
             return action.newFilter;
@@ -29,10 +29,31 @@ const question = (state = 0, action) => {
     }
 };
 
+const fetchedData = (state = {}, action) => {
+    switch (action.type) {
+        case types.REQUEST_DATA:
+            return Object.assign({}, state, {
+                [action.collection] : {
+                    isFetching: true
+                }
+            })
+        case types.RECEIVE_DATA:
+            return Object.assign({}, state, {
+                [action.collection] : {
+                    isFetching: false,
+                    data: action.data
+                }
+            })
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     filter,
     topic,
     question,
+    fetchedData,
     routing
 });
 

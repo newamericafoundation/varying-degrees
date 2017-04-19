@@ -19,9 +19,9 @@ const Filter = ({ currFilter, onFilterChange }) => {
       <Select 
         name='whatever'
         options={filterSettings}
-        value={currFilter}
+        value={currFilter.value}
         onChange={(filter) => { 
-          let newVal = filter && filter.value ? filter.value : '';
+          let newVal = filter && filter.value ? getFilterSettingsObject(filter.value) : { value:"all" };
           return onFilterChange(newVal); 
         }}
         searchable={false}
@@ -31,6 +31,14 @@ const Filter = ({ currFilter, onFilterChange }) => {
     </div>
   )
 };
+
+const getFilterSettingsObject = (filterValue) => {
+  for (let settingsObject of filterSettings) {
+    if (settingsObject.value == filterValue) {
+      return settingsObject;
+    }
+  }
+}
 
 const mapStateToProps = (state) => {
     return {
