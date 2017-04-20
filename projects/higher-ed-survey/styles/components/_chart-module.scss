@@ -5,10 +5,10 @@
 	padding: 0px 25px;
 
 	&__title-block {
-		padding: 20px 0px;
+		padding: 25px 0px;
 		&__title {
 			font-size: 20px;
-
+			margin-bottom: 0px;
 		}
 	}
 
@@ -19,12 +19,12 @@
 	}
 
 	&__charts {
-		padding: 25px 0px;
+		padding: 20px 0px 25px;
 	}
 
 	&__subquestion-heading {
 		font-weight: bold;
 		font-size: 16px;
-		padding: 10px 0px;
+		padding: 0px 0px 10px;
 	}
 }

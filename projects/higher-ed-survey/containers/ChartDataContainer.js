@@ -21,28 +21,26 @@ class ChartDataContainer extends React.Component {
   }
 
   loadData() {
-    const { fetchedData, settingsObject, fetchDataCollection } = this.props;
-    const { collection } = settingsObject;
-    console.log("loading data for " + collection);
-    if (fetchedData[collection]) {
-      console.log("data already fetched for " + collection);
-      this.dataObject = fetchedData[collection];
+    const { fetchedData, dataSourceName, fetchDataCollection } = this.props;
+    console.log("loading data for " + dataSourceName);
+    if (fetchedData[dataSourceName]) {
+      console.log("data already fetched for " + dataSourceName);
+      this.dataObject = fetchedData[dataSourceName];
     } else {
-      fetchDataCollection(collection);
+      fetchDataCollection(dataSourceName);
     }
     
   }
 
   render() {
-    const { fetchedData, settingsObject, fetchDataCollection } = this.props;
-    const { collection } = settingsObject;
+    const { fetchedData, dataSourceName, variableSettings, fetchDataCollection } = this.props;
 
-    if (fetchedData[collection]) {
-      this.dataObject = fetchedData[collection];
+    if (fetchedData[dataSourceName]) {
+      this.dataObject = fetchedData[dataSourceName];
     }
 
     if (this.dataObject && !this.dataObject.isFetching) {
-      return <ChartFilterGroup settings={settingsObject} data={this.dataObject.data} />
+      return <ChartFilterGroup variableSettings={variableSettings} data={this.dataObject.data} />
     } else {
       return <h5>Loading</h5>
     }

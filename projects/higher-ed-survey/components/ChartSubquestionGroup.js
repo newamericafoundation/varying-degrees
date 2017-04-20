@@ -9,10 +9,10 @@ const ChartSubquestionGroup = ({ settingsObject }) => {
     if (settingsObject.subquestions) {
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
             charts.push(<h5 key={i + "heading"} className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>)
-    		charts.push(<ChartDataContainer key={i} settingsObject={subquestionSettings} />);
+    		charts.push(<ChartDataContainer key={i} dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables}/>);
     	})
     } else {
-    	charts.push(<ChartDataContainer settingsObject={settingsObject} />);
+    	charts.push(<ChartDataContainer dataSourceName={settingsObject.collection} variableSettings={settingsObject.variables} />);
     }
 
     return <div className="chart-module__charts">{ charts }</div>

@@ -4,12 +4,20 @@ import { scaleLinear } from 'd3-scale';
 import formatValue from '../utilities/format_value';
 
 const margin = {top: 15, right: 0, bottom: 30, left: 0};
+const labelWidth = 100;
+
+// make this a functional component
 
 class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.initializeXScale();
+
+		this.state = {
+			initialRender: true
+		}
+
 	}
 
 	initializeXScale() {
@@ -22,29 +30,43 @@ class Chart extends React.Component {
 
 
 	render() {
-		const { data, yTransform, width } = this.props;
+		const { data, yTransform, width, height } = this.props;
 		console.log("in chart!");
+		console.log(this.state.initialRender)
 
-		this.xScale.range([0, width]);
+		this.xScale.range([0, width-labelWidth]);
 
 		let rects = this.buildRects();
 
+		let currTransform = this.state.initialRender ? 0 : yTransform;
+
+		console.log(currTransform);
+		let styleObject = { transform: 'translate(0px,' + currTransform + 'px)'}
+
 		return (
-			<g className="chart" transform={"translate(0," + yTransform + ")"}>
-				<text className="chart__filter-label" x="0" y="3" fill="black">{data.display_name}</text>
-				{rects}
+			<g className="chart" style={styleObject}>
+				<text className="chart__filter-label" x="0" y={height/2} fill="black">{data.display_name}</text>
+				<g className="chart__data" transform={"translate(" + labelWidth + "," + "0)"}>	
+					{rects}
+				</g>
 			</g>
 		)
 	}
 
+	componentDidMount() {
+		this.setState({
+			initialRender: false
+		})
+	}
+
 	buildRects() {
-		const { settings, data, height } = this.props;
+		const { variableSettings, data, height } = this.props;
 		console.log(data);
-		console.log(settings);
+		console.log(variableSettings);
 		let rects = [];
 		let currX = 0;
 
-		settings.variables.forEach((varSettings, i) => {
+		variableSettings.forEach((varSettings, i) => {
 			const dataVal = data[varSettings.variable];
 			let elemWidth = this.xScale(dataVal)
 			let props = {
@@ -57,9 +79,11 @@ class Chart extends React.Component {
 			}
 
 			rects.push(
-				<g key={i} transform={ "translate(" + currX + "," + margin.top + ")" }>
+				<g key={i} transform={ "translate(" + currX + ",0)" }>
 					<rect {...props} />
-					<text className="chart__data__label" x="7" y={height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
+					{ elemWidth > 30 &&
+						<text className="chart__data__label" x="7" y={height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
+					}
 				</g>
 			)
 			currX += elemWidth;

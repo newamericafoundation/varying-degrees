@@ -6,55 +6,31 @@ const vizSettings = [
     questions: [
       { 
         text: "Compared to when your parents were your age, do you think doing the following goals have gotten easier to attain, harder to attain, or are about the same?",
+        variables: [
+          {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
+          {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
+          {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+          {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
+          {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
+          {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
+        ],
         subquestions: [
           { 
             text: "Finding a good paying job", 
             collection: "higher_ed_economy_0_0",
-            variables: [
-              {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
-              {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
-              {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
-              {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
-              {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
-              {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
-            ]
           },
-          // { 
-          //   text: "Getting a good education", 
-          //   collection: "higher_ed_economy_0_0",
-          //   variables: [
-          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
-          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
-          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
-          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
-          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
-          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
-          //   ]
-          // },
-          // { 
-          //   text: "Being able to afford a family", 
-          //   collection: "higher_ed_economy_0_0",
-          //   variables: [
-          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
-          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
-          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
-          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
-          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
-          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
-          //   ]
-          // },
-          // { 
-          //   text: "Being treated with respect by society", 
-          //   collection: "higher_ed_economy_0_0",
-          //   variables: [
-          //     {variable:"much_easier", displayName:"Much Easier", format:"percent", color:"blue"},
-          //     {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color:"green"},
-          //     {variable:"about_same", displayName:"About the Same", format:"percent", color:"yellow"},
-          //     {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color:"orange"},
-          //     {variable:"much_harder", displayName:"Much Harder", format:"percent", color:"red"},
-          //     {variable:"dont_know", displayName:"Don't Know", format:"percent", color:"grey"},
-          //   ]
-          // },
+          { 
+            text: "Getting a good education", 
+            collection: "higher_ed_economy_0_0",
+          },
+          { 
+            text: "Being able to afford a family", 
+            collection: "higher_ed_economy_0_0",
+          },
+          { 
+            text: "Being treated with respect by society", 
+            collection: "higher_ed_economy_0_0",
+          },
         ]
       },
       { 

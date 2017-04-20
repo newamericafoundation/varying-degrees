@@ -1,0 +1,31 @@
+.legend {
+	padding: 25px 0px 0px;
+	&__cell {
+		cursor: pointer;
+		padding: 0px;
+
+		&__color-swatch-container, &__label, &__val-count {
+			float: left;
+		}
+
+		&__color-swatch-container {
+			margin-top: 3px;
+		}
+
+		&__label {
+			padding: 0px 15px 0px 7px;
+			margin-bottom: 0px;
+			font-size: 12px;
+			color: palette-get(na-black-70);
+		}
+
+		&.disabled {
+			.legend__cell__color-swatch {
+				fill: palette-get(na-black-10);
+			}
+			.legend__cell__label {
+				color: palette-get(na-black-10) !important;
+			}
+		}
+	}
+}

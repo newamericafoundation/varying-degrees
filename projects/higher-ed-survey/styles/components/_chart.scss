@@ -1,6 +1,11 @@
 .chart {
+	-webkit-transition: transform 5s ease-out 1s;
+    -moz-transition: transform 5s ease-out 1s;
+    -o-transition: transform 5s ease-out 1s;
+    transition: transform 5s ease-out 1s;
+
 	&__filter-label {
-		alignment-baseline: hanging;
+		alignment-baseline: middle;
 		fill: palette-get(na-black-70);
 		font-size: 12px;
 	}
