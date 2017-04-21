@@ -35,15 +35,39 @@ const vizSettings = [
       },
       { 
         text: "Agree or disagree: There are lots of good-paying jobs that do not require college.",
-        collection: "higher_ed_economy_0_0"
+        collection: "higher_ed_economy_0_0",
+        variables: [
+          {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
+          {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
+          {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+          {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
+          {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
+          {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
+        ],
       },
       { 
         text: "Agree or disagree: American society respects people who did not go to college.",
-        collection: "higher_ed_economy_0_0"
+        collection: "higher_ed_economy_0_0",
+        variables: [
+          {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
+          {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
+          {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+          {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
+          {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
+          {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
+        ],
       },
       { 
         text: "Agree or disagree: It is easier to be successful with a college degree than without.",
-        collection: "higher_ed_economy_0_0"
+        collection: "higher_ed_economy_0_0",
+        variables: [
+          {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
+          {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
+          {variable:"about_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+          {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
+          {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
+          {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
+        ],
       },
     ] 
   },

@@ -30,15 +30,12 @@ class ChartFilterGroup extends React.Component {
 
 	render() {
 		const { currFilter, variableSettings, data, defaultFilter} = this.props;
-		console.log("in chart filter group!");
-		console.log(currFilter);
 		const filterObject = defaultFilter ? defaultFilter : currFilter;
 
 		let charts = [];
 		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings} />);
 
 		if (filterObject.value != "all") {
-			console.log(filterObject);
 			const {variableIndices} = filterObject;
 
 			let i = 1;

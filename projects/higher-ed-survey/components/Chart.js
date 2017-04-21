@@ -22,8 +22,6 @@ class Chart extends React.Component {
 
 	initializeXScale() {
 		const { data } = this.props;
-		console.log(data);
-		console.log(data.total_respondents)
 		this.xScale = scaleLinear()
 			.domain([0, data.total_respondents])
 	}
@@ -31,8 +29,6 @@ class Chart extends React.Component {
 
 	render() {
 		const { data, yTransform, width, height } = this.props;
-		console.log("in chart!");
-		console.log(this.state.initialRender)
 
 		this.xScale.range([0, width-labelWidth]);
 
@@ -40,7 +36,6 @@ class Chart extends React.Component {
 
 		let currTransform = this.state.initialRender ? 0 : yTransform;
 
-		console.log(currTransform);
 		let styleObject = { transform: 'translate(0px,' + currTransform + 'px)'}
 
 		return (
@@ -61,8 +56,6 @@ class Chart extends React.Component {
 
 	buildRects() {
 		const { variableSettings, data, height } = this.props;
-		console.log(data);
-		console.log(variableSettings);
 		let rects = [];
 		let currX = 0;
 

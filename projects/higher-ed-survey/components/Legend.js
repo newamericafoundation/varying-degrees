@@ -49,11 +49,11 @@ export default class Legend extends React.Component {
 		return (
 			<div className="legend">
 				<ul className="legend__cell-list">
-					{this.props.variableSettings.map(variable => {
+					{this.props.variableSettings.map((variable, i) => {
 						let classes = "legend__cell";
 						// classes += this.state.valsShown.indexOf(variable.variable) > -1 ? "" : " disabled";
 			          return (
-			          	<li className={classes} onClick={() => this.toggleVals(variable.variable)}>
+			          	<li key={i} className={classes} onClick={() => this.toggleVals(variable.variable)}>
 			          		<svg height="8" width="8" className="legend__cell__color-swatch-container">
 			          			<rect key={variable.variable} fill={variable.color} x="0" y="0" width="8" height="8" className="legend__cell__color-swatch"></rect>
 			          		</svg>

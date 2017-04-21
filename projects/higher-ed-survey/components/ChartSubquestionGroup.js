@@ -5,26 +5,38 @@ import ChartShareButtons from './ChartShareButtons';
 import ChartDataContainer from '../containers/ChartDataContainer';
 
 const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilter }) => {
-    let charts = [];
-
     if (defaultSubquestion) {
         const subquestionSettings = settingsObject.subquestions[defaultSubquestion];
-        charts.push(<h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>)
-        // charts.push(<ChartShareButtons settingsObject={settingsObject} index={i} />)
-        charts.push(<ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter}/>);
+        return (
+            <div className="chart-module__charts">
+                <h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>
+                <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter}/>
+            </div>
+        )
+    } 
+
+    if (settingsObject.subquestions) {
+        let charts = [];
+    	settingsObject.subquestions.forEach((subquestionSettings, i) => {
+            charts.push(
+                <div key={i}>
+                    <h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>
+                    <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
+        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables}/>
+                </div>
+            )
+    	})
+        return <div className="chart-module__charts">{ charts }</div>
     } else {
-        if (settingsObject.subquestions) {
-        	settingsObject.subquestions.forEach((subquestionSettings, i) => {
-                charts.push(<h5 key={i + "heading"} className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>)
-                // charts.push(<ChartShareButtons settingsObject={settingsObject} index={i} />)
-        		charts.push(<ChartDataContainer key={i} dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables}/>);
-        	})
-        } else {
-        	charts.push(<ChartDataContainer dataSourceName={settingsObject.collection} variableSettings={settingsObject.variables} />);
-        }
+        return (
+            <div className="chart-module__charts">
+                <ChartShareButtons settingsObject={settingsObject} subquestionIndex="none" />
+                <ChartDataContainer dataSourceName={settingsObject.collection} variableSettings={settingsObject.variables} />
+            </div>
+        )
     }
 
-    return <div className="chart-module__charts">{ charts }</div>
+    
     
 };
 
