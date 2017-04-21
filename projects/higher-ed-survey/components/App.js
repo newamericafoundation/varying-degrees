@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 const App = ({ children }) =>
     <div>
-        <h1>Higher Ed Survey Explorer</h1>
         { children }
     </div>;
 
