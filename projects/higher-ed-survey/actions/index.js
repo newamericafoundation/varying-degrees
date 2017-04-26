@@ -58,3 +58,11 @@ export function fetchData(collection) {
       // catch any error in the network call.
   }
 }
+
+export function setTooltip(settings) {
+    return { 
+        type: types.SET_TOOLTIP,
+        settings
+    }
+}
+

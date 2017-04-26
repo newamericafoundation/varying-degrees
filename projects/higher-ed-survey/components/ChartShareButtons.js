@@ -42,7 +42,7 @@ class ChartShare extends React.Component {
             <div className="chart-module__share">
                 <div className="chart-module__share__button-container">
                     <div className="chart-module__share__button" onClick={() => { console.log("clicked!"); return this.showEmbedPopup();}}>Embed</div>
-                    <div className="chart-module__share__button">Save as Image</div>
+                    <a href="http://static/img/chart_snapshots/image.jpeg" target="_blank" className="chart-module__share__button">Save as Image</a>
                 </div>
                 {showEmbedPopup &&
                     <div className="chart-module__share__embed-popup" ref="embed-popup">{ embedPopupUrl}</div>

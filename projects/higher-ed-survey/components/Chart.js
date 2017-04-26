@@ -2,7 +2,8 @@ import React from 'react';
 
 import { scaleLinear } from 'd3-scale';
 import formatValue from '../utilities/format_value';
-
+import { setTooltip } from '../actions';
+import { connect } from 'react-redux';
 const margin = {top: 15, right: 0, bottom: 30, left: 0};
 const labelWidth = 100;
 
@@ -22,8 +23,9 @@ class Chart extends React.Component {
 
 	initializeXScale() {
 		const { data } = this.props;
+
 		this.xScale = scaleLinear()
-			.domain([0, data.total_respondents])
+			.domain([0, data.total_base])
 	}
 
 
@@ -54,6 +56,17 @@ class Chart extends React.Component {
 		})
 	}
 
+	mouseover(label, value) {
+		console.log("moused over")
+		console.log(label, value)
+		this.props.setTooltip({label:label, value:value})
+
+	}
+
+	mouseout() {
+		this.props.setTooltip(null)
+	}
+
 	buildRects() {
 		const { variableSettings, data, height } = this.props;
 		let rects = [];
@@ -61,7 +74,8 @@ class Chart extends React.Component {
 
 		variableSettings.forEach((varSettings, i) => {
 			const dataVal = data[varSettings.variable];
-			let elemWidth = this.xScale(dataVal)
+			let elemWidth = this.xScale(dataVal);
+			
 			let props = {
 				className: "chart__data__rect",
 				x: 0,
@@ -71,11 +85,13 @@ class Chart extends React.Component {
 				fill: varSettings.color
 			}
 
+			const formattedVal = formatValue(dataVal/data.total_base, "percent");
+
 			rects.push(
-				<g key={i} transform={ "translate(" + currX + ",0)" }>
+				<g key={i} transform={ "translate(" + currX + ",0)" } onMouseEnter={(a, b, c, d) => { console.log(a, b, c, d); }} onMouseLeave={() => { return this.mouseout();}}>
 					<rect {...props} />
 					{ elemWidth > 30 &&
-						<text className="chart__data__label" x="7" y={height/2}>{ formatValue(dataVal/data.total_respondents, "percent") }</text>
+						<text className="chart__data__label" x="7" y={height/2}>{ formattedVal }</text>
 					}
 				</g>
 			)
@@ -86,7 +102,20 @@ class Chart extends React.Component {
 	}
 }
 
-export default Chart;
+const mapStateToProps = (state) => {
+    return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setTooltip: tooltipSettings => dispatch(setTooltip(tooltipSettings))
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Chart);
 
 
 // import React from 'react';

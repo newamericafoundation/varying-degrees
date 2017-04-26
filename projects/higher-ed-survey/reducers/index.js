@@ -49,12 +49,22 @@ const fetchedData = (state = {}, action) => {
     }
 }
 
+const tooltip = (state = null, action) => {
+    switch (action.type) {
+        case types.setTooltip:
+            return action.settings;s
+        default:
+            return state;
+    }
+};
+
 const rootReducer = combineReducers({
     filter,
     topic,
     question,
     fetchedData,
-    routing
+    routing,
+    tooltip
 });
 
 export default rootReducer;

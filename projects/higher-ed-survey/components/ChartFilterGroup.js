@@ -12,7 +12,7 @@ class ChartFilterGroup extends React.Component {
 		this.resizeFunc = this.resize.bind(this);
 
 		this.state = {
-			width: 0,
+			width: 500,
 			height: 0
 		}
 	}
