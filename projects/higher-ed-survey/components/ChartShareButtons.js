@@ -32,8 +32,8 @@ class ChartShare extends React.Component {
     render() {
         const {showEmbedPopup} = this.state;
         const {topic, question, subquestionIndex, filter} = this.props;
-        console.log("in render");
-        console.log(this.props);
+        // console.log("in render");
+        // console.log(this.props);
         const filterId = filter.id ? filter.id : "all";
 
         const embedPopupUrl = "http://localhost:3333/embed/" + topic + "/" + question + "/" + subquestionIndex + "/" + filterId;
@@ -53,8 +53,8 @@ class ChartShare extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("in map state to props")
-    console.log(state)
+    // console.log("in map state to props")
+    // console.log(state)
     return {
       topic: state.topic,
       question: state.question,

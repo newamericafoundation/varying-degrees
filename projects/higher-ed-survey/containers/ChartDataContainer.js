@@ -9,19 +9,19 @@ class ChartDataContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.loadData();
+    this.loadData(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
     const { topic, question } = this.props;
 
     if (nextProps.topic != topic || nextProps.question != question) {
-      this.loadData();
+      this.loadData(nextProps);
     }
   }
 
-  loadData() {
-    const { fetchedData, dataSourceName, fetchDataCollection } = this.props;
+  loadData(props) {
+    const { fetchedData, dataSourceName, fetchDataCollection } = props;
     console.log("loading data for " + dataSourceName);
     if (fetchedData[dataSourceName]) {
       console.log("data already fetched for " + dataSourceName);
@@ -37,6 +37,8 @@ class ChartDataContainer extends React.Component {
 
     if (fetchedData[dataSourceName]) {
       this.dataObject = fetchedData[dataSourceName];
+    } else {
+      this.dataObject = null;
     }
 
     if (this.dataObject && !this.dataObject.isFetching) {

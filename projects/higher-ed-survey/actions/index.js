@@ -44,7 +44,8 @@ export function receiveData(collection, json) {
 export function fetchData(collection) {
 
   return function (dispatch) {
-
+    dispatch(requestData(collection))
+    
     return fetch(dbPath + collection)
       .then(response => { return response.json()})
       .then(json => {
