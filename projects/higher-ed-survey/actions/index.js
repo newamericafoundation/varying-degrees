@@ -12,6 +12,14 @@ export function changeFilter(newFilter) {
     };
 }
 
+export function changeTopicWrapper(newTopic) {
+    return function (dispatch) {
+      dispatch(changeQuestion(0));
+      dispatch(changeTopic(newTopic));
+      dispatch(changeFilter({value:"all"}));
+    }
+}
+
 export function changeTopic(newTopic) {
     return {
         type: types.CHANGE_TOPIC,
@@ -45,7 +53,7 @@ export function fetchData(collection) {
 
   return function (dispatch) {
     dispatch(requestData(collection))
-    
+
     return fetch(dbPath + collection)
       .then(response => { return response.json()})
       .then(json => {

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { changeTopic } from '../actions';
+import { changeTopicWrapper } from '../actions';
 import Question from './Question';
 
 const Topic = ({ topicSettings, topicIndex, activeTopicIndex, onTopicClick }) => {
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onTopicClick: whichTopic => dispatch(changeTopic(whichTopic))
+        onTopicClick: whichTopic => dispatch(changeTopicWrapper(whichTopic))
     };
 };
 
