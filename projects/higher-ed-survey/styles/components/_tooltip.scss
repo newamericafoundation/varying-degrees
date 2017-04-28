@@ -1,0 +1,42 @@
+.__react_component_tooltip {
+	background-color: white !important;
+	opacity: 1 !important;
+	padding: 3px !important;
+	border: 1px solid palette-get(na-black-10) !important;
+	border-radius: 0px !important;
+
+	&:after, &:before {
+		border-top-color: white !important;
+		border-bottom-color: white !important;
+		border-left-color: white !important;
+		border-right-color: white !important;
+		border-style: none !important;
+	}
+}
+
+.tooltip {
+	margin: 10px;
+
+	&__title {
+		font-size: 12px;
+		font-weight: bold;
+		margin-bottom: 0px;
+	}
+
+	&__text {
+		margin-bottom: 0px;
+		line-height: .9;
+		&__label, &__value {
+			font-size: 10px;
+		}
+		&__label {
+			color: palette-get(na-black);
+			font-weight: bold;
+			padding-right: 7px;
+		}
+		&__value {
+			color: palette-get(na-black-70);
+			font-weight: normal;
+		}
+	}
+}

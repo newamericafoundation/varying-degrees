@@ -51,8 +51,8 @@ const fetchedData = (state = {}, action) => {
 
 const tooltip = (state = null, action) => {
     switch (action.type) {
-        case types.setTooltip:
-            return action.settings;s
+        case types.SET_TOOLTIP:
+            return action.settings;
         default:
             return state;
     }

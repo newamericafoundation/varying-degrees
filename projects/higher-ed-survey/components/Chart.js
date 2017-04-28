@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ReactTooltip from 'react-tooltip';
 import { scaleLinear } from 'd3-scale';
 import formatValue from '../utilities/format_value';
 import { setTooltip } from '../actions';
@@ -66,10 +66,9 @@ class Chart extends React.Component {
 		})
 	}
 
-	mouseover(label, value) {
-		console.log("moused over")
-		console.log(label, value)
-		this.props.setTooltip({label:label, value:value})
+	mouseover(varDisplayName, rawVal, percentVal, elemColor) {
+
+		this.props.setTooltip({title:varDisplayName, rawVal:rawVal, percentVal:percentVal, elemColor: elemColor})
 
 	}
 
@@ -99,7 +98,7 @@ class Chart extends React.Component {
 			const formattedVal = formatValue(dataVal/data.total_base, "percent");
 
 			rects.push(
-				<g key={i} transform={ "translate(" + currX + ",0)" } onMouseEnter={(a, b, c, d) => { console.log(a, b, c, d); }} onMouseLeave={() => { return this.mouseout();}}>
+				<g key={i} ref={i} data-tip='tooltip' transform={ "translate(" + currX + ",0)" } onMouseEnter={(a, b) => { this.mouseover(varSettings.displayName, dataVal, formattedVal, varSettings.color)}} onMouseLeave={() => { return this.mouseout();}}>
 					<rect {...props} />
 					{ elemWidth > 30 &&
 						<text className="chart__data__label" x="7" y={height/2}>{ formattedVal }</text>

@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Chart from './Chart';
 import { connect } from 'react-redux';
+import ReactTooltip from 'react-tooltip';
 
 const spaceBetweenAllAndFilters = 15;
 
@@ -29,18 +30,18 @@ class ChartFilterGroup extends React.Component {
     }
 
 	render() {
-		const { currFilter, variableSettings, data, defaultFilter} = this.props;
+		const { currFilter, variableSettings, data, defaultFilter, tooltipSettings} = this.props;
 		const filterObject = defaultFilter ? defaultFilter : currFilter;
 
 		let charts = [];
-		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings} />);
+		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings}  mouseoverFunc={this.mouseover}/>);
 
 		if (filterObject.value != "all") {
 			const {variableIndices} = filterObject;
 
 			let i = 1;
 			for (let index of variableIndices) {
-				charts.push(<Chart key={index} yTransform={i*this.state.height + spaceBetweenAllAndFilters} width={this.state.width} height={this.state.height} data={data[index]} variableSettings={variableSettings} />)
+				charts.push(<Chart key={index} yTransform={i*this.state.height + spaceBetweenAllAndFilters} width={this.state.width} height={this.state.height} data={data[index]} variableSettings={variableSettings} mouseoverFunc={this.mouseover}/>)
 				i++;
 			}
 		}
@@ -48,8 +49,27 @@ class ChartFilterGroup extends React.Component {
 		return (
 			<div>
 				<svg width="100%" height={(this.state.height + spaceBetweenAllAndFilters)* charts.length} className="chart-filter-group" ref="renderingArea">{charts}</svg>
+				<ReactTooltip>
+					{ tooltipSettings &&
+						<div className="tooltip">
+							<h5 className="tooltip__title" style={{color :tooltipSettings.elemColor}}>{ tooltipSettings.title }</h5>
+			                <h5 className="tooltip__text">
+			                    <span className="tooltip__text__label">Number of Respondents:</span>
+			                    <span className="tooltip__text__value">{ tooltipSettings.rawVal }</span>
+			                </h5>
+			                <h5 className="tooltip__text">
+			                    <span className="tooltip__text__label">Percent of Total:</span>
+			                    <span className="tooltip__text__value">{ tooltipSettings.percentVal }</span>
+			                </h5>
+			            </div>
+					}
+				</ReactTooltip>
 			</div>
 		)
+	}
+
+	mouseover() {
+		console.log("mousing over!");
 	}
 
 	resize() {
@@ -74,7 +94,8 @@ class ChartFilterGroup extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      currFilter: state.filter
+      currFilter: state.filter,
+      tooltipSettings: state.tooltip
     };
 };
 
