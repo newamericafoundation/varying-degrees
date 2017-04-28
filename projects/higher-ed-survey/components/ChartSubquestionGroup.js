@@ -19,7 +19,7 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
         let charts = [];
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
             charts.push(
-                <div key={i}>
+                <div className="chart-module__chart-container" key={i}>
                     <h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>
                     <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
         		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables}/>
