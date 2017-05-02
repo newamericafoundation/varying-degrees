@@ -29,6 +29,13 @@
 		color: palette-get(na-black);
 		font-size: 16px;
 		padding: 0px 0px 10px;
+
+		&__total-count {
+			font-weight: normal;
+			color: palette-get(na-black-40);
+			padding-left: 5px;
+			font-size: 12px;
+		}
 	}
 
 	&__chart-container {

@@ -9,7 +9,6 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
         const subquestionSettings = settingsObject.subquestions[defaultSubquestion];
         return (
             <div className="chart-module__charts">
-                <h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>
                 <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter}/>
             </div>
         )
@@ -20,9 +19,8 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
             charts.push(
                 <div className="chart-module__chart-container" key={i}>
-                    <h5 className="chart-module__subquestion-heading">{subquestionSettings.text}</h5>
                     <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
-        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables}/>
+        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} subquestionTitle={subquestionSettings.text}/>
                 </div>
             )
     	})

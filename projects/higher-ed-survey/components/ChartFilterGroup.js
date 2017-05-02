@@ -30,9 +30,10 @@ class ChartFilterGroup extends React.Component {
     }
 
 	render() {
-		const { currFilter, variableSettings, data, defaultFilter, tooltipSettings} = this.props;
+		const { currFilter, variableSettings, data, defaultFilter, tooltipSettings, subquestionTitle} = this.props;
 		const filterObject = defaultFilter ? defaultFilter : currFilter;
-
+		console.log("tis is the data!");
+		console.log(data);
 		let charts = [];
 		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings}  mouseoverFunc={this.mouseover}/>);
 
@@ -49,6 +50,9 @@ class ChartFilterGroup extends React.Component {
 
 		return (
 			<div>
+				{ subquestionTitle &&
+					<h5 className="chart-module__subquestion-heading">{subquestionTitle}<span className="chart-module__subquestion-heading__total-count">(n={data[0].total_base})</span></h5>
+				}
 				<svg width="100%" height={(this.state.height + spaceBetweenAllAndFilters)* charts.length} className="chart-filter-group" ref="renderingArea">{charts}</svg>
 				<ReactTooltip>
 					{ tooltipSettings &&

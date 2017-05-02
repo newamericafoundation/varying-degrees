@@ -33,7 +33,7 @@ class ChartDataContainer extends React.Component {
   }
 
   render() {
-    const { fetchedData, dataSourceName, variableSettings, fetchDataCollection, defaultFilter } = this.props;
+    const { fetchedData, dataSourceName, variableSettings, fetchDataCollection, defaultFilter, subquestionTitle } = this.props;
 
     if (fetchedData[dataSourceName]) {
       this.dataObject = fetchedData[dataSourceName];
@@ -42,9 +42,9 @@ class ChartDataContainer extends React.Component {
     }
 
     if (this.dataObject && !this.dataObject.isFetching) {
-      return <ChartFilterGroup variableSettings={variableSettings} data={this.dataObject.data} defaultFilter={defaultFilter}/>
+      return <ChartFilterGroup variableSettings={variableSettings} data={this.dataObject.data} defaultFilter={defaultFilter} subquestionTitle={subquestionTitle} />
     } else {
-      return <h5>Loading</h5>
+      return null
     }
   }
 }

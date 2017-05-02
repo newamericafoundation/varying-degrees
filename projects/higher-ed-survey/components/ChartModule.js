@@ -18,7 +18,7 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex }) => {
         <Filter />
         <Legend variableSettings={currVizSettings.variables} />
         <ChartSubquestionGroup settingsObject={currVizSettings} />
-        <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base} (1,600).</h5>
+        <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
         
       </div>
     )
