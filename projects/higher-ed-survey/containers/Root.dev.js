@@ -3,8 +3,18 @@ import { Provider } from 'react-redux';
 // import DevTools from './DevTools';
 import { Router } from 'react-router';
 import routes from '../routes';
+import $ from 'jquery';
 
 export default class Root extends Component {
+    constructor() {
+        super()
+    }
+
+    componentDidMount() {
+        $("#root").siblings(".dataviz__loading-gif").hide();
+        $("#root").css("visibility", "visible").css("min-height","none");
+    }
+
     render() {
         const { store, history } = this.props;
         return (
@@ -16,8 +26,3 @@ export default class Root extends Component {
         );
     }
 }
-
-Root.propTypes = {
-    store: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
-};

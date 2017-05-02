@@ -3,8 +3,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
+var S3Plugin = require('webpack-s3-plugin');
+
+// s3 bucket settings
+var AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+var AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+var DATA_PROJECTS_S3_BUCKET_NAME = process.env.DATA_PROJECTS_S3_BUCKET_NAME;
+
 
 module.exports = {
     // The entry file. All your app roots fromn here.
@@ -14,7 +19,7 @@ module.exports = {
     // Where you want the output to go
     output: {
         path: path.join(__dirname, '/dist/'),
-        filename: '[name]-[hash].min.js',
+        filename: 'higher_ed_survey.js',
         publicPath: '/'
     },
     plugins: [
@@ -23,18 +28,7 @@ module.exports = {
         // this plugin
         new webpack.optimize.OccurenceOrderPlugin(),
 
-        // handles creating an index.html file and injecting assets. necessary because assets
-        // change name because the hash part changes. We want hash name changes to bust cache
-        // on client browsers.
-        new HtmlWebpackPlugin({
-            template: 'index.tpl.html',
-            inject: 'body',
-            filename: 'index.html'
-        }),
-        // extracts the css from the js files and puts them on a separate .css file. this is for
-        // performance and is used in prod environments. Styles load faster on their own .css
-        // file as they dont have to wait for the JS to load.
-        new ExtractTextPlugin('[name]-[hash].min.css'),
+
         // handles uglifying js
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
@@ -42,14 +36,23 @@ module.exports = {
                 screw_ie8: true
             }
         }),
-        // creates a stats.json
-        new StatsPlugin('webpack.stats.json', {
-            source: false,
-            modules: false
-        }),
         // plugin for passing in data to the js, like what NODE_ENV we are in.
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+
+        new S3Plugin({
+          // Only upload css and js 
+          include: /.*\.(scss|css|js)/,
+          // s3Options are required 
+          s3Options: {
+            accessKeyId: AWS_ACCESS_KEY_ID,
+            secretAccessKey: AWS_SECRET_ACCESS_KEY,
+            region: 'us-west-2'
+          },
+          s3UploadOptions: {
+            Bucket: DATA_PROJECTS_S3_BUCKET_NAME
+          }
         })
     ],
     
@@ -67,7 +70,7 @@ module.exports = {
             test: /\.scss$/,
             // we extract the styles into their own .css file instead of having
             // them inside the js.
-            loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass')
+            loader: 'style!css!sass'
         }, 
         { 
             test: /\.svg$/, loader: 'svg-react' 

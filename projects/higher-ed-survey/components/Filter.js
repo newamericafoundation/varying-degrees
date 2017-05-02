@@ -3,6 +3,7 @@ import filterSettings from "../filterSettings.js";
 import { changeFilter } from '../actions';
 import { connect } from 'react-redux';
 const Select = require('react-select');
+import $ from 'jquery';
 
 const Filter = ({ currFilter, onFilterChange }) => {
   let filterOptions = [<option key="-1" selected disabled>Filter by</option>]
@@ -27,6 +28,15 @@ const Filter = ({ currFilter, onFilterChange }) => {
         searchable={false}
         scrollMenuIntoView={false}
         placeholder="Filter by"
+        clearRenderer={function() { 
+          if(this.value == "all") {
+            $(".Select-clear-zone").css("display", "none");
+            return "";
+          } else {
+            $(".Select-clear-zone").css("display", "table-cell");
+            return "Clear Filter"
+          } 
+        }}
       />
     </div>
   )

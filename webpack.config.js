@@ -43,7 +43,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+                loader: 'style!css!sass'
             },
             { 
                 test: /\.svg$/, loader: 'svg-react' 

@@ -13,8 +13,6 @@ class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 
-		console.log("IN CHART CONSTRUCTOR")
-
 		this.initializeXScale();
 
 		this.state = {
@@ -26,8 +24,6 @@ class Chart extends React.Component {
 	initializeXScale() {
 		const { data } = this.props;
 
-		console.log("IN CHART X SCALE INITIALIZE")
-
 		this.xScale = scaleLinear()
 			.domain([0, data.total_base])
 	}
@@ -36,13 +32,7 @@ class Chart extends React.Component {
 	render() {
 		const { data, yTransform, width, height } = this.props;
 
-		console.log("IN CHART RENDER")
-		console.log(data)
-		console.log(this.xScale.domain())
-
 		this.xScale.range([0, width-labelWidth]);
-
-		console.log(this.xScale.range())
 
 		let rects = this.buildRects();
 
@@ -83,7 +73,6 @@ class Chart extends React.Component {
 
 		variableSettings.forEach((varSettings, i) => {
 			const dataVal = data[varSettings.variable];
-			console.log(varSettings.variable)
 			let elemWidth = this.xScale(dataVal);
 			
 			let props = {

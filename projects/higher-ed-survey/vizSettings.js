@@ -9,7 +9,7 @@ const vizSettings = [
         variables: [
           {variable:"much_easier", displayName:"Much Easier", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_easier", displayName:"Somewhat Easier", format:"percent", color: colors.turquoise.light},
-          {variable:"about_the_same", displayName:"About the Same", format:"percent", color: colors.grey.light},
+          {variable:"about_the_same", displayName:"About the Same", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_harder", displayName:"Somewhat Harder", format:"percent", color: colors.red.light},
           {variable:"much_harder", displayName:"Much Harder", format:"percent", color: colors.red.dark},
           {variable:"dont_know_refused", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -41,7 +41,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -54,7 +54,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -67,7 +67,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -146,7 +146,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -176,7 +176,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -206,7 +206,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -236,7 +236,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -266,7 +266,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -302,7 +302,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_getting_a_degree", displayName:"Strongly - Getting a Degree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_getting_a_degree", displayName:"Somewhat - Getting a Degree", format:"percent", color: colors.turquoise.light},
-          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.light},
+          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_gaining_knowledge", displayName:"Somewhat - Gaining Knowledge", format:"percent", color: colors.purple.light},
           {variable:"strongly_gaining_knowledge", displayName:"Strongly - Gaining Knowledge", format:"percent", color: colors.purple.dark},
           {variable:"neither", displayName:"Neither", format:"percent", color: colors.red.light},
@@ -316,7 +316,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_an_accessible_higher_education_system_good_for_society", displayName:"Strongly - Good for Society", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_an_accessible_higher_education_system_good_for_society", displayName:"Somewhat - Good for Society", format:"percent", color: colors.turquoise.light},
-          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.light},
+          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_higher_education_mostly_a_private_benefit_for_individual_graduates", displayName:"Somewhat - Individual Benefit", format:"percent", color: colors.purple.light},
           {variable:"strongly_higher_education_mostly_a_private_benefit_for_individual_graduates", displayName:"Strongly - Individual Benefit", format:"percent", color: colors.purple.dark},
           {variable:"neither", displayName:"Neither", format:"percent", color: colors.red.light},
@@ -330,7 +330,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_the_student_is_solely_responsible", displayName:"Strongly - Student Solely Responsible", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_the_student_is_solely_responsible", displayName:"Somewhat - Student Solely Responsible", format:"percent", color: colors.turquoise.light},
-          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.light},
+          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_the_university_needs_to_assist_in_the_success_of_its_students", displayName:"Somewhat - University Should Assist", format:"percent", color: colors.purple.light},
           {variable:"strongly_the_university_needs_to_assist_in_the_success_of_its_students", displayName:"Strongly - University Should Assist", format:"percent", color: colors.purple.dark},
           {variable:"neither", displayName:"Neither", format:"percent", color: colors.red.light},
@@ -344,7 +344,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_put_the_needs_and_interests_of_students_first", displayName:"Strongly - Students First", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_put_the_needs_and_interests_of_students_first", displayName:"Somewhat - Students First", format:"percent", color: colors.turquoise.light},
-          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.light},
+          {variable:"both___the_same", displayName:"Both/the Same", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_put_the_long_term_interests_of_their_schools_first", displayName:"Somewhat - Interest of School First", format:"percent", color: colors.purple.light},
           {variable:"strongly_put_the_long_term_interests_of_their_schools_first", displayName:"Strongly - Interest of School First", format:"percent", color: colors.purple.dark},
           {variable:"neither", displayName:"Neither", format:"percent", color: colors.red.light},
@@ -358,7 +358,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -371,7 +371,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -384,7 +384,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -402,7 +402,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -415,7 +415,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -428,7 +428,7 @@ const vizSettings = [
         variables: [
           {variable:"strongly_agree", displayName:"Strongly Agree", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_agree", displayName:"Somewhat Agree", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.light},
+          {variable:"neither_agree_nor_disagree", displayName:"Neither Agree nor Disagree", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_disagree", displayName:"Somewhat Disagree", format:"percent", color: colors.red.light},
           {variable:"strongly_disagree", displayName:"Strongly Disagree", format:"percent", color: colors.red.dark},
           {variable:"dont_know", displayName:"Don't Know", format:"percent", color: colors.grey.medium},
@@ -446,7 +446,7 @@ const vizSettings = [
         variables: [
           {variable:"completely_confident", displayName:"Completely Confident", format:"percent", color: colors.turquoise.dark},
           {variable:"somewhat_confident", displayName:"Somewhat Confident", format:"percent", color: colors.turquoise.light},
-          {variable:"neither_confident_nor_unconfident", displayName:"Neither Confident nor Unconfident", format:"percent", color: colors.grey.light},
+          {variable:"neither_confident_nor_unconfident", displayName:"Neither Confident nor Unconfident", format:"percent", color: colors.grey.medium_light},
           {variable:"somewhat_unconfident", displayName:"Somewhat Confident", format:"percent", color: colors.red.light},
           {variable:"not_at_all_confident", displayName:"Not at all Confident", format:"percent", color: colors.red.dark},
           {variable:"dont_know_refused", displayName:"Don't Know/Refused", format:"percent", color: colors.grey.medium},
@@ -459,7 +459,7 @@ const vizSettings = [
         variables: [
           {variable:"grants_or_scholarships", displayName:"Grants or Scholarships", format:"percent", color: colors.turquoise.dark},
           {variable:"loans_or_debt", displayName:"Loans or Debt", format:"percent", color: colors.turquoise.light},
-          {variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.grey.light},
+          {variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.grey.medium_light},
           {variable:"income_from_a_job", displayName:"Income from Job", format:"percent", color: colors.red.light},
           {variable:"savings", displayName:"Savings", format:"percent", color: colors.red.dark},
           {variable:"no_none", displayName:"No one", format:"percent", color: colors.grey.medium},

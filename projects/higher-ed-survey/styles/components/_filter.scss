@@ -1,10 +1,16 @@
+$filter-max-width: 400px;
+$clear-button-width: 70px;
 .filter {
-	max-width: 300px;
+	max-width: 400px;
 
 	.Select-control {
 		border-radius: 0px;
 		border: 1px solid palette-get(na-black-10);
 		cursor: pointer;
+	}
+
+	.Select-menu-outer {
+		max-width: $filter-max-width - $clear-button-width - 5;
 	}
 	.Select-option {
 		&.is-focused {
@@ -19,4 +25,24 @@
 		border-color: palette-get(na-black-10);
 		box-shadow: none;
 	}
+
+	.Select {
+		padding-right: 75px;
+	}
+
+	.Select-control {
+		overflow: visible !important;
+	}
+
+	.Select-clear-zone {
+		font-size: 12px;
+		left: 115px !important;
+		width: 100px !important;
+
+		&:hover {
+			color: palette-get(na-turquoise) !important;
+		}
+	}
+
+
 }

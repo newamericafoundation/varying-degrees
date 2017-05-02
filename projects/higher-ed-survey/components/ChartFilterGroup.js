@@ -44,6 +44,7 @@ class ChartFilterGroup extends React.Component {
 				charts.push(<Chart key={index} yTransform={i*this.state.height + spaceBetweenAllAndFilters} width={this.state.width} height={this.state.height} data={data[index]} variableSettings={variableSettings} mouseoverFunc={this.mouseover}/>)
 				i++;
 			}
+			ReactTooltip.rebuild();
 		}
 
 		return (

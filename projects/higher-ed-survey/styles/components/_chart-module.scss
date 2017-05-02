@@ -8,6 +8,7 @@
 	&__title-block {
 		padding: 25px 0px;
 		&__title {
+			color: palette-get(na-black);
 			font-size: 20px;
 			margin-bottom: 0px;
 		}
@@ -25,6 +26,7 @@
 
 	&__subquestion-heading {
 		font-weight: bold;
+		color: palette-get(na-black);
 		font-size: 16px;
 		padding: 0px 0px 10px;
 	}

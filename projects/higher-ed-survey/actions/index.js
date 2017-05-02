@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 import * as types from './types';
 
-const dbPath = process.env.NODE_ENV == 'production' ? 'https://febp-backend.herokuapp.com/api/' : 'http://localhost:3000/api/';
+const dbPath = process.env.NODE_ENV == 'production' ? 'https://data-projects-backend.herokuapp.com/api/' : 'http://localhost:3000/api/';
 console.log(dbPath);
 
 export function changeFilter(newFilter) {

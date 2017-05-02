@@ -1,4 +1,6 @@
-import 'babel-polyfill';
+if (!global._babelPolyfill) {
+   require('babel-polyfill');
+}
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';

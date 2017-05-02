@@ -7,8 +7,20 @@ import ChartSubquestionGroup from './ChartSubquestionGroup';
 import SvgIcon from './SvgIcon';
 // require('../styles/index.scss');
 
-const EmbedGenerator = ({ topic, question, subquestion, filter }) => {
-  console.log(topic, question, subquestion, filter);
+class EmbedGenerator extends React.Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+    console.log("done!");
+    // window.callPhantom('takeShot');
+  }
+
+  render() {
+    const { topic, question, subquestion, filter } = this.props;
+
+    console.log(topic, question, subquestion, filter);
     const currVizSettings = vizSettings[topic].questions[question];
     console.log("in embed generator");
     return (
@@ -22,6 +34,7 @@ const EmbedGenerator = ({ topic, question, subquestion, filter }) => {
         
       </div>
     )
+  }
 };
 
 const mapStateToProps = (state, ownProps) => {
