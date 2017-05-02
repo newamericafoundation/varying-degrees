@@ -16,7 +16,9 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex }) => {
           <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
         </div>
         <Filter />
-        <Legend variableSettings={currVizSettings.variables} />
+        { currVizSettings.variables &&
+          <Legend variableSettings={currVizSettings.variables} />
+        }
         <ChartSubquestionGroup settingsObject={currVizSettings} />
         <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
         

@@ -17,10 +17,12 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
     if (settingsObject.subquestions) {
         let charts = [];
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
+            let varSettings = settingsObject.variables || subquestionSettings.variables;
+            console.log(varSettings)
             charts.push(
                 <div className="chart-module__chart-container" key={i}>
                     <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
-        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} subquestionTitle={subquestionSettings.text}/>
+        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={varSettings} subquestionTitle={subquestionSettings.text}/>
                 </div>
             )
     	})

@@ -455,17 +455,47 @@ const vizSettings = [
       },
       { 
         text: "Did you use any sources to help you pay for your higher education?",
-        collection: "College ",
-        variables: [
-          {variable:"grants_or_scholarships", displayName:"Grants or Scholarships", format:"percent", color: colors.turquoise.dark},
-          {variable:"loans_or_debt", displayName:"Loans or Debt", format:"percent", color: colors.turquoise.light},
-          {variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.grey.medium_light},
-          {variable:"income_from_a_job", displayName:"Income from Job", format:"percent", color: colors.red.light},
-          {variable:"savings", displayName:"Savings", format:"percent", color: colors.red.dark},
-          {variable:"no_none", displayName:"No one", format:"percent", color: colors.grey.medium},
-          {variable:"dont_know_refused", displayName:"Don't Know/Refused", format:"percent", color: colors.grey.medium},
-        ],
         base: "College Graduation/Some College or Current Student",
+        subquestions: [
+          { 
+            text: "Grants or Scholarships",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"grants_or_scholarships", displayName:"Grants or Scholarships", format:"percent", color: colors.turquoise.dark}],
+          },
+          { 
+            text: "Loans or Debt",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"loans_or_debt", displayName:"Loans or Debt", format:"percent", color: colors.turquoise.light}],
+          
+          },
+          { 
+            text: "Financial Support from Family",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.grey.medium_light}],
+          },
+          { 
+            text: "Income from a Job",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"income_from_a_job", displayName:"Income from Job", format:"percent", color: colors.red.light}],
+          },
+          { 
+            text: "Savings",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"savings", displayName:"Savings", format:"percent", color: colors.red.dark}],
+          },
+          { 
+            text: "No/None",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"no_none", displayName:"No one", format:"percent", color: colors.grey.medium}],
+          },
+          { 
+            text: "Don't Know/Refused",
+            collection: "paying_for_college_1_0",
+            variables: [{variable:"dont_know_refused", displayName:"Don't Know/Refused", format:"percent", color: colors.grey.medium}],
+          },
+        ]
+   
+        
       },
     ] 
   },
