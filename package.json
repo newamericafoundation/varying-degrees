@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "node server-dev",
-    "build": "webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "npm run build-standalone | npm run build-submodule",
+    "build-standalone": "BUILD_TYPE=standalone webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build-submodule": "BUILD_TYPE=submodule webpack --config ./webpack.production.config.js --progress --profile --colors",
     "start": "NODE_ENV=production node server"
   },
   "keywords": [

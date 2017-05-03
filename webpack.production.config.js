@@ -12,6 +12,9 @@ var PROJECT_DIR = path.resolve(__dirname, 'projects');
 var AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
 var AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 var DATA_PROJECTS_S3_BUCKET_NAME = process.env.DATA_PROJECTS_S3_BUCKET_NAME;
+var DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME = process.env.DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME;
+
+var BUILD_TYPE = process.env.BUILD_TYPE;
 
 function getProjectEntryPoints() {
     var entryPoints = {};
@@ -26,7 +29,7 @@ function getProjectEntryPoints() {
     }
 
     for (var project of projectList) {
-        entryPoints[project] = PROJECT_DIR + "/" + project + '/index.js';
+        entryPoints[project] = PROJECT_DIR + "/" + project + '/index-' + BUILD_TYPE + '.js';
     }
 
     console.log(entryPoints);
@@ -39,7 +42,7 @@ module.exports = {
     // Where you want the output to go
     output: {
         path: BUILD_DIR,
-        filename: '[name].js',
+        filename: '[name]-' + BUILD_TYPE + '.js',
         publicPath: '/'
     },
     plugins: [
@@ -71,7 +74,7 @@ module.exports = {
             region: 'us-west-2'
           },
           s3UploadOptions: {
-            Bucket: DATA_PROJECTS_S3_BUCKET_NAME
+            Bucket: BUILD_TYPE == "standalone" ? DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME : DATA_PROJECTS_S3_BUCKET_NAME
           }
         })
     ],
