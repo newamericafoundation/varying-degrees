@@ -28,15 +28,12 @@ class SurveyExplorer extends Component {
 	resize() {
 		let w = this.getCurrWidth();
 		console.log(w);
-		let newScreenSize = "small";
-
-		if (w >= breakpoints.small) {
-			if (w >= breakpoints.large) {
-				newScreenSize = "large";
-			} else {
-				newScreenSize = "medium";
-			}
+		let newScreenSize = "medium";
+		
+		if (w >= breakpoints.large) {
+			newScreenSize = "large";
 		}
+		
 		if (newScreenSize != this.props.screenSize) {
 			this.props.setScreenSize(newScreenSize);
 		}

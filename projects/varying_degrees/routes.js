@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import SurveyExplorer from './containers/SurveyExplorer';
-import About from './components/About';
 import EmbedGenerator from './components/EmbedGenerator';
 
 export default (

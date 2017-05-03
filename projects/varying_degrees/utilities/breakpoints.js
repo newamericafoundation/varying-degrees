@@ -1,7 +1,5 @@
 const breakpoints = {
-	small: 400,
-	medium: 800,
-	large: 1000
+	large: 600
 }
 
 export default breakpoints;

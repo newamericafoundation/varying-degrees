@@ -4,6 +4,11 @@
 	vertical-align: top;
 	padding: 0px 25px;
 
+	&.mobile {
+		width: 100%;
+		display: block;
+	}
+
 	&.embed-generator {
 		padding: 25px;
 	}

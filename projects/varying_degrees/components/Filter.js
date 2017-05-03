@@ -18,7 +18,7 @@ const Filter = ({ currFilter, onFilterChange }) => {
   return (
     <div className="filter">
       <Select 
-        name='whatever'
+        name='filter'
         options={filterSettings}
         value={currFilter.value}
         onChange={(filter) => { 

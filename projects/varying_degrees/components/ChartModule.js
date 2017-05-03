@@ -7,11 +7,13 @@ import ChartSubquestionGroup from './ChartSubquestionGroup';
 import SvgIcon from './SvgIcon';
 
 
-const ChartModule = ({ activeTopicIndex, activeQuestionIndex }) => {
+const ChartModule = ({ activeTopicIndex, activeQuestionIndex, screenSize }) => {
     const currVizSettings = vizSettings[activeTopicIndex].questions[activeQuestionIndex];
 
+    let classList = "chart-module";
+    classList += screenSize == "medium" ? " mobile" : "";
     return (
-      <div className="chart-module">
+      <div className={ classList }>
         <div className="chart-module__title-block">
           <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
         </div>
@@ -29,7 +31,8 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex }) => {
 const mapStateToProps = (state) => {
     return {
       activeTopicIndex: state.topic,
-      activeQuestionIndex: state.question
+      activeQuestionIndex: state.question,
+      screenSize: state.screenSize
     };
 };
 
