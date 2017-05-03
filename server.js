@@ -1,30 +1,13 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+var express = require('express');
+var app = express();
 
-new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
-    hot: true,
-    historyApiFallback: true,
-    // It suppress error shown in console, so it has to be set to false.
-    quiet: false,
-    // It suppress everything except error, so it has to be set to false as well
-    // to see success build.
-    noInfo: false,
-    stats: {
-      // Config for minimal console.log mess.
-      assets: false,
-      colors: true,
-      version: false,
-      hash: false,
-      timings: false,
-      chunks: false,
-      chunkModules: false
-    }
-}).listen(3333, 'localhost', function (err) {
-    if (err) {
-        console.log(err);
-    }
+app.use(express.static(__dirname + '/public/'));
 
-  console.log('Listening at localhost:3333');
+app.get('*', function(req, res){
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(process.env.PORT || 8080, function () {
+    var port = process.env.PORT || 8080;
+    console.log("App now running on port", port);
 });

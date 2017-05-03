@@ -75,3 +75,10 @@ export function setTooltip(settings) {
     }
 }
 
+export function setScreenSize(size) {
+    return { 
+        type: types.SET_SCREEN_SIZE,
+        size
+    }
+}
+

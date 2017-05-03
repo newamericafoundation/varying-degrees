@@ -1,13 +1,12 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 // import { generatePng } from '../utilites/generatePng';
 
 class ChartShare extends React.Component {
     constructor(props) {
         super(props);
-        
-        
-            
+           
         this.state = {
             showEmbedPopup: false,
         }
@@ -24,9 +23,19 @@ class ChartShare extends React.Component {
     // }
 
     showEmbedPopup() {
+        $(document).click((e) => {this.hideEmbedPopup(e); });
         this.setState({
             showEmbedPopup: true
         });
+    }
+
+    hideEmbedPopup(e) {
+        console.log("hiding")
+        console.log(e);
+        this.setState({
+            showEmbedPopup: false
+        });
+        $(document).unbind("click");
     }
 
     render() {
@@ -36,8 +45,8 @@ class ChartShare extends React.Component {
         // console.log(this.props);
         const filterId = filter.id ? filter.id : "all";
 
-        const embedPopupUrl = "http://localhost:3333/embed/" + topic + "/" + question + "/" + subquestionIndex + "/" + filterId;
-        
+        const embedPopupUrl = "http://na-data-projects-interactives.s3-website-us-west-2.amazonaws.com/embed/" + topic + "/" + question + "/" + subquestionIndex + "/" + filterId;
+        const iframeCode = "<iframe src='" + embedPopupUrl + "' width='100%' height='500px'></iframe>";
         return (
             <div className="chart-module__share">
                 <div className="chart-module__share__button-container">
@@ -45,7 +54,7 @@ class ChartShare extends React.Component {
                     <a href="http://static/img/chart_snapshots/image.jpeg" target="_blank" className="chart-module__share__button">Save as Image</a>
                 </div>
                 {showEmbedPopup &&
-                    <div className="chart-module__share__embed-popup" ref="embed-popup">{ embedPopupUrl}</div>
+                    <div className="chart-module__share__embed-popup" ref="embed-popup" onClick={(e) => { e.stopPropagation(); e.nativeEvent.stopImmediatePropagation(); }}>{ iframeCode }</div>
                 }
             </div>
         )

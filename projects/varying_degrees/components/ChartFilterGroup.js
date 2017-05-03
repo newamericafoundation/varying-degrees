@@ -32,8 +32,7 @@ class ChartFilterGroup extends React.Component {
 	render() {
 		const { currFilter, variableSettings, data, defaultFilter, tooltipSettings, subquestionTitle} = this.props;
 		const filterObject = defaultFilter ? defaultFilter : currFilter;
-		console.log("tis is the data!");
-		console.log(data);
+		
 		let charts = [];
 		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings}  mouseoverFunc={this.mouseover}/>);
 

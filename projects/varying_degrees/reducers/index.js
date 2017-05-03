@@ -58,13 +58,23 @@ const tooltip = (state = null, action) => {
     }
 };
 
+const screenSize = (state = "large", action) => {
+    switch (action.type) {
+        case types.SET_SCREEN_SIZE:
+            return action.size;
+        default:
+            return state;
+    }
+};
+
 const rootReducer = combineReducers({
     filter,
     topic,
     question,
     fetchedData,
     routing,
-    tooltip
+    tooltip,
+    screenSize
 });
 
 export default rootReducer;

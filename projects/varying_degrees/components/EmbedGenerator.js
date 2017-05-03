@@ -30,7 +30,7 @@ class EmbedGenerator extends React.Component {
         </div>
         <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
         <Legend variableSettings={currVizSettings.variables} />
-        <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: All respondents (1,600).</h5>
+        <h5 className="chart-module__footer-note">Source: New Americas annual public opinion survey of higher education. Base: All respondents (1,600).</h5>
         
       </div>
     )

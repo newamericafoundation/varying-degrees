@@ -15,6 +15,13 @@ require('./styles/index.scss');
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
+browserHistory.listen(location => {
+  const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
+  if (path) {
+      history.replace(path);
+   }
+ });
+
 render(
     <AppContainer>
         <Root store={store} history={history} />

@@ -4,9 +4,9 @@
   "description": "A boilerplate for playing around with react, redux and react-router with the help of webpack.",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "start": "node server",
-    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors"
+    "start-dev": "node server-dev",
+    "build": "webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "start": "NODE_ENV=production node server"
   },
   "keywords": [
     "es6",
