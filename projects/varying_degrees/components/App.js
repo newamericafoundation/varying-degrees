@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 const App = ({ children }) =>
     <div>
-    	<h1> This is a Test</h1>
         { children }
     </div>;
 

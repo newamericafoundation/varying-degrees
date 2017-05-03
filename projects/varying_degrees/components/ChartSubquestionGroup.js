@@ -9,7 +9,7 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
         const subquestionSettings = settingsObject.subquestions[defaultSubquestion];
         return (
             <div className="chart-module__charts">
-                <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter}/>
+                <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter} subquestionTitle={subquestionSettings.text}/>
             </div>
         )
     } 

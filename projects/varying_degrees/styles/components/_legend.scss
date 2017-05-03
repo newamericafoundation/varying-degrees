@@ -1,5 +1,9 @@
 .legend {
 	padding: 25px 0px 0px;
+
+	.embed-generator & {
+		padding: 15px 0px;
+	}
 	&__cell {
 		cursor: pointer;
 		padding: 0px;

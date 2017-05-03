@@ -52,7 +52,7 @@ class ChartFilterGroup extends React.Component {
 				{ subquestionTitle &&
 					<h5 className="chart-module__subquestion-heading">{subquestionTitle}<span className="chart-module__subquestion-heading__total-count">(n={data[0].total_base})</span></h5>
 				}
-				<svg width="100%" height={(this.state.height + spaceBetweenAllAndFilters)* charts.length} className="chart-filter-group" ref="renderingArea">{charts}</svg>
+				<svg width="100%" height={(this.state.height) * charts.length + spaceBetweenAllAndFilters} className="chart-filter-group" ref="renderingArea">{charts}</svg>
 				<ReactTooltip>
 					{ tooltipSettings &&
 						<div className="tooltip">

@@ -24,13 +24,13 @@ class EmbedGenerator extends React.Component {
     const currVizSettings = vizSettings[topic].questions[question];
     console.log("in embed generator");
     return (
-      <div className="chart-module">
+      <div className="chart-module embed-generator">
         <div className="chart-module__title-block">
           <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
         </div>
         <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
         <Legend variableSettings={currVizSettings.variables} />
-        <h5 className="chart-module__footer-note">Source: New Americas annual public opinion survey of higher education. Base: All respondents (1,600).</h5>
+        <h5 className="chart-module__footer-note">Source: New Americas annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
         
       </div>
     )
