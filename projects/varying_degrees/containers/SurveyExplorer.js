@@ -13,9 +13,14 @@ class SurveyExplorer extends Component {
 
 		this.resizeFunc = this.resize.bind(this);
 	}
+	componentWillMount() {
+		this.calcScreenSize();
+	}
+
 	componentDidMount() {
 		$(window).resize(this.resizeFunc);
 	}
+
 	render() {
 	    return (
 	        <div className="survey-explorer" ref="surveyExplorer">
@@ -26,8 +31,11 @@ class SurveyExplorer extends Component {
 	}
 
 	resize() {
+		this.calcScreenSize();
+	}
+
+	calcScreenSize() {
 		let w = this.getCurrWidth();
-		console.log(w);
 		let newScreenSize = "medium";
 		
 		if (w >= breakpoints.large) {
