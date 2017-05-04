@@ -14,16 +14,19 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex, screenSize }) => {
     classList += screenSize == "medium" ? " mobile" : "";
     return (
       <div className={ classList }>
-        <div className="chart-module__title-block">
-          <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
+        <div className="chart-module__header">
+          <div className="chart-module__title-block">
+            <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
+          </div>
+          <Filter />
+          { currVizSettings.variables &&
+            <Legend variableSettings={currVizSettings.variables} />
+          }
         </div>
-        <Filter />
-        { currVizSettings.variables &&
-          <Legend variableSettings={currVizSettings.variables} />
-        }
-        <ChartSubquestionGroup settingsObject={currVizSettings} />
-        <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
-        
+        <div className="chart-module__body">
+          <ChartSubquestionGroup settingsObject={currVizSettings} />
+          <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
+        </div>
       </div>
     )
 };

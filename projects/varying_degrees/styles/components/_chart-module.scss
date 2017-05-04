@@ -3,6 +3,7 @@
 	display: table-cell;
 	vertical-align: top;
 	padding-left: 25px;
+	position: relative;
 
 	&.mobile {
 		width: 100%;
@@ -13,7 +14,13 @@
 	&.embed-generator {
 		padding: 25px;
 	}
-	position: relative;
+	
+	&__header {
+	}
+
+	&__body {
+
+	}
 
 	&__title-block {
 		padding: 0px 0px 25px;
