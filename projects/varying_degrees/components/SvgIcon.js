@@ -1,10 +1,8 @@
 import React from 'react';
 
-const SvgIcon = (props) => {
-	const {name} = props;
-	console.log(name);
-	var Icon = require('../static/img/svg/' + name + '.svg');
-	return (<Icon className={'icon icon__' + name} />)
+const SvgIcon = ({name}) => {
+	let path = require('../assets/img/svg/' + name + '.svg')
+	return (<img src={path} alt={name} />)
 }
 
 export default SvgIcon;

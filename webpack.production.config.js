@@ -95,16 +95,13 @@ module.exports = {
             // them inside the js.
             loader: 'style!css!sass'
         }, 
-        { 
-            test: /\.svg$/, loader: 'svg-react' 
-        },
         {
             test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
             loader: 'url?limit=10000&mimetype=application/font-woff'
-        }, {
-            test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/,
-            loader: 'file'
-        }]
+        }, 
+        { 
+            test: /\.svg$/, loader: 'svg-react' 
+        }
     },
     postcss: [
         require('autoprefixer')

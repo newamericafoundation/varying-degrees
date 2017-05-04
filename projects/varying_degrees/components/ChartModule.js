@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Filter from './Filter';
 import Legend from './Legend';
 import ChartSubquestionGroup from './ChartSubquestionGroup';
-import SvgIcon from './SvgIcon';
+import NewAmericaIcon from '../assets/img/newamerica.js';
 
 
 const ChartModule = ({ activeTopicIndex, activeQuestionIndex, screenSize }) => {
@@ -25,7 +25,12 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex, screenSize }) => {
         </div>
         <div className="chart-module__body">
           <ChartSubquestionGroup settingsObject={currVizSettings} />
-          <h5 className="chart-module__footer-note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
+        </div>
+        <div className="chart-module__footer">
+          <h5 className="chart-module__footer__note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
+          <a className="chart-module__footer__image" href="https://www.newamerica.org">
+            <NewAmericaIcon />
+          </a>
         </div>
       </div>
     )

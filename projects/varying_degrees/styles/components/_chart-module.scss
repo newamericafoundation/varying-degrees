@@ -1,3 +1,4 @@
+$logo-width: 100px;
 .chart-module {
 	width: 70%;
 	display: table-cell;
@@ -31,14 +32,36 @@
 		}
 	}
 
-	&__footer-note {
-		font-size: 12px;
-		font-style: italic;
-		color: palette-get(na-black-40);
+	&__footer {
+		border-top: 1px solid palette-get(na-black-10);
+		padding-top: 10px;
+		&__note {
+			font-size: 12px;
+			font-style: italic;
+			color: palette-get(na-black-40);
+			width: calc(100% - #{$logo-width});
+			display: inline-block;
+			padding-right: 20px
+		}
+
+		&__image {
+			width: $logo-width;
+			display: inline-block;
+			cursor: pointer;
+			* {
+				fill: palette-get(na-black);
+			}
+
+			&:hover {
+				* {
+					fill: palette-get(na-black-30);
+				}
+			}
+		}
 	}
 
 	&__charts {
-		padding: 20px 0px 25px;
+		padding: 20px 0px 0px;
 
 		.embed-generator & {
 			padding: 0px;
@@ -85,4 +108,6 @@
 			color: palette-get(na-black-40);
 		}
 	}
+
+
 }
