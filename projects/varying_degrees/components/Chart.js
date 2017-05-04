@@ -50,7 +50,6 @@ class Chart extends React.Component {
 	}
 
 	mouseover(varDisplayName, rawVal, percentVal, elemColor) {
-
 		this.props.setTooltip({title:varDisplayName, rawVal:rawVal, percentVal:percentVal, elemColor: elemColor})
 
 	}

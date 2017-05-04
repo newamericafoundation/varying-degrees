@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
+import EmbedIcon from '../assets/img/embed';
+import DownloadIcon from '../assets/img/download';
 // import { generatePng } from '../utilites/generatePng';
 
 class ChartShare extends React.Component {
@@ -49,10 +51,8 @@ class ChartShare extends React.Component {
         const iframeCode = "<iframe src='" + embedPopupUrl + "' width='100%' height='500px'></iframe>";
         return (
             <div className="chart-module__share">
-                <div className="chart-module__share__button-container">
-                    <a className="chart-module__share__button" onClick={() => { console.log("clicked!"); return this.showEmbedPopup();}}>Embed</a>
-                    <a href="http://static/img/chart_snapshots/image.jpeg" target="_blank" className="chart-module__share__button">Save as Image</a>
-                </div>
+                <a className="chart-module__share__button embed" onClick={() => { console.log("clicked!"); return this.showEmbedPopup();}}><EmbedIcon /></a>
+                <a href="http://static/img/chart_snapshots/image.jpeg" target="_blank" className="chart-module__share__button download"><DownloadIcon /></a>
                 {showEmbedPopup &&
                     <div className="chart-module__share__embed-popup" ref="embed-popup" onClick={(e) => { e.stopPropagation(); e.nativeEvent.stopImmediatePropagation(); }}>{ iframeCode }</div>
                 }

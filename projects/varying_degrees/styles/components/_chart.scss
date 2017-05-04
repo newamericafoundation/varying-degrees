@@ -10,6 +10,10 @@
 		&__rect {
 			opacity: 1;
 			stroke: white;
+
+			&:hover {
+				opacity: .7;
+			}
 		}
 
 		&__label {

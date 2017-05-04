@@ -72,7 +72,7 @@ $logo-width: 100px;
 		font-weight: bold;
 		color: palette-get(na-black);
 		font-size: 16px;
-		padding: 0px 0px 10px;
+		padding: 0px 45px 10px 0px;
 
 		&__total-count {
 			font-weight: normal;
@@ -89,13 +89,34 @@ $logo-width: 100px;
 
 	&__share {
 		position: absolute;
-		top: 0px;
+		top: -1px;
 		right: 0px;
 
 		&__button {
-			color: palette-get(na-black-40);
-			font-size: 12px;
-			margin-left: 15px;
+			position:relative;
+			display: inline-block;
+			right: 0px;
+
+			& * {
+				fill: palette-get(na-black-30);
+			}
+
+			&:hover {
+				* {
+					fill: palette-get(na-black);
+				}
+			}
+
+			&.embed {
+				width: 15px;
+				margin-right: 7px;
+				top: 0px;
+			}
+
+			&.download {
+				width: 12px;
+				top: 1.5px;
+			}
 		}
 
 		&__embed-popup {
@@ -106,6 +127,7 @@ $logo-width: 100px;
 			border: 1px solid palette-get(na-black-10);
 			font-size: 10px;
 			color: palette-get(na-black-40);
+			z-index: 100;
 		}
 	}
 
