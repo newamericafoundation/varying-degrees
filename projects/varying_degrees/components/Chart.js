@@ -5,7 +5,7 @@ import formatValue from '../utilities/format_value';
 import { setTooltip } from '../actions';
 import { connect } from 'react-redux';
 const margin = {top: 15, right: 0, bottom: 30, left: 0};
-const labelWidth = 100;
+const labelWidth = 110;
 
 // make this a functional component
 
@@ -33,9 +33,11 @@ class Chart extends React.Component {
 
 		let styleObject = { transform: 'translate(0px,' + yTransform + 'px)'}
 
+		let displayName = this.setDisplayName(data.display_name);
+
 		return (
 			<g className="chart" style={styleObject}>
-				<text className="chart__filter-label" x="0" y={height/2} fill="black">{data.display_name}</text>
+				<text className="chart__filter-label" x="0" y={height/2} fill="black">{displayName}</text>
 				<g className="chart__data" transform={"translate(" + labelWidth + "," + "0)"}>	
 					{rects}
 				</g>
@@ -90,6 +92,22 @@ class Chart extends React.Component {
 		})
 
 		return rects;
+	}
+
+	setDisplayName(name) {
+		console.log(name);
+		switch(name) {
+			case "Undergraduate Degree":
+				return "Undergrad. Degree";
+			case "Silent Generation (72+)":
+				return "Silent Gen. (72+)";
+			case "Current":
+				return "Current Student";
+			case "Not":
+				return "Not a Student";
+			default:
+				return name;
+		}
 	}
 }
 

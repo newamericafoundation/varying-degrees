@@ -36,19 +36,26 @@ $logo-width: 100px;
 	&__footer {
 		border-top: 1px solid palette-get(na-black-10);
 		padding-top: 10px;
+		margin-top: 7px;
+
 		&__note {
 			font-size: 12px;
 			font-style: italic;
 			color: palette-get(na-black-40);
 			width: calc(100% - #{$logo-width});
 			display: inline-block;
-			padding-right: 20px
+			padding-right: 20px;
+			vertical-align: middle;
+			margin-bottom: 15px;
 		}
 
 		&__image {
 			width: $logo-width;
 			display: inline-block;
 			cursor: pointer;
+			border-bottom: none !important;
+			padding-bottom: 0px !important;
+
 			* {
 				fill: palette-get(na-black);
 			}
@@ -101,8 +108,8 @@ $logo-width: 100px;
 			position:relative;
 			display: inline-block;
 			right: 0px;
-			border-bottom: none;
-			padding-bottom: 0px;
+			border-bottom: none !important;
+			padding-bottom: 0px !important;
 
 			& * {
 				fill: palette-get(na-black-30);
@@ -118,19 +125,13 @@ $logo-width: 100px;
 				width: 17px;
 				margin-right: 7px;
 				top: 0px;
-
-				.has-subquestions & {
-					width: 15px;
-				}
 			}
 
 			&.download {
 				width: 15px;
 				top: 1.5px;
 
-				.has-subquestions & {
-					width: 12px;
-				}
+				
 			}
 		}
 
