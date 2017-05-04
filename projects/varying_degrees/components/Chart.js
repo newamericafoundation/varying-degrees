@@ -14,11 +14,6 @@ class Chart extends React.Component {
 		super(props);
 
 		this.initializeXScale();
-
-		this.state = {
-			initialRender: true
-		}
-
 	}
 
 	initializeXScale() {
@@ -36,9 +31,7 @@ class Chart extends React.Component {
 
 		let rects = this.buildRects();
 
-		let currTransform = this.state.initialRender ? 0 : yTransform;
-
-		let styleObject = { transform: 'translate(0px,' + currTransform + 'px)'}
+		let styleObject = { transform: 'translate(0px,' + yTransform + 'px)'}
 
 		return (
 			<g className="chart" style={styleObject}>

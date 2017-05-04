@@ -60,6 +60,7 @@
 	&-mobile {
 		border: 1px solid palette-get(na-turquoise);
 		margin: 25px 15px 15px;
+		padding: 10px 0px;
 		position: relative;
 
 		&__intro-text {
@@ -71,12 +72,10 @@
 		}
 
 		&__select-container {
-			display: table;
-			padding: 10px;
+			padding: 0px 10px;
 			width: 100%;
 			&__label, &__select {
-				display: table-cell;
-
+				display: inline-block;
 			}
 
 			&__label {
@@ -88,6 +87,10 @@
 
 			&__select {
 				width: 100%;
+			}
+
+			.Select-control .Select-value {
+				padding-right: 25px;
 			}
 		}
 	}

@@ -13,12 +13,11 @@ class SurveyExplorer extends Component {
 
 		this.resizeFunc = this.resize.bind(this);
 	}
-	componentWillMount() {
-		this.calcScreenSize();
-	}
 
 	componentDidMount() {
 		$(window).resize(this.resizeFunc);
+
+		this.calcScreenSize();
 	}
 
 	render() {

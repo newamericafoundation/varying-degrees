@@ -471,27 +471,22 @@ const vizSettings = [
           { 
             text: "Financial Support from Family",
             collection: "paying_for_college_1_0",
-            variables: [{variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.grey.medium_light}],
+            variables: [{variable:"financial_support_from_family", displayName:"Financial Support from Family", format:"percent", color: colors.blue.dark}],
           },
           { 
             text: "Income from a Job",
             collection: "paying_for_college_1_0",
-            variables: [{variable:"income_from_a_job", displayName:"Income from Job", format:"percent", color: colors.red.light}],
+            variables: [{variable:"income_from_a_job", displayName:"Income from Job", format:"percent", color: colors.blue.light}],
           },
           { 
             text: "Savings",
             collection: "paying_for_college_1_0",
-            variables: [{variable:"savings", displayName:"Savings", format:"percent", color: colors.red.dark}],
+            variables: [{variable:"savings", displayName:"Savings", format:"percent", color: colors.purple.dark}],
           },
           { 
             text: "No/None",
             collection: "paying_for_college_1_0",
             variables: [{variable:"no_none", displayName:"No one", format:"percent", color: colors.grey.medium}],
-          },
-          { 
-            text: "Don't Know/Refused",
-            collection: "paying_for_college_1_0",
-            variables: [{variable:"dont_know_refused", displayName:"Don't Know/Refused", format:"percent", color: colors.grey.medium}],
           },
         ]
    
