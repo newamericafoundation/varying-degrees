@@ -26,7 +26,7 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
                 </div>
             )
     	})
-        return <div className="chart-module__charts">{ charts }</div>
+        return <div className="chart-module__charts has-subquestions">{ charts }</div>
     } else {
         return (
             <div className="chart-module__charts">

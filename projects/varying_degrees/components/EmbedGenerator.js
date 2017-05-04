@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import filterSettings from "../filterSettings.js";
 import Legend from './Legend';
 import ChartSubquestionGroup from './ChartSubquestionGroup';
-import SvgIcon from './SvgIcon';
+import NewAmericaIcon from '../assets/img/newamerica.js';
+
 // require('../styles/index.scss');
 
 class EmbedGenerator extends React.Component {
@@ -30,8 +31,12 @@ class EmbedGenerator extends React.Component {
         </div>
         <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
         <Legend variableSettings={currVizSettings.variables} />
-        <h5 className="chart-module__footer-note">Source: New Americas annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
-        
+        <div className="chart-module__footer">
+          <h5 className="chart-module__footer__note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
+          <a className="chart-module__footer__image" href="https://www.newamerica.org">
+            <NewAmericaIcon />
+          </a>
+        </div>      
       </div>
     )
   }
