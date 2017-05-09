@@ -105,6 +105,10 @@ class Chart extends React.Component {
 				return "Current Student";
 			case "Not":
 				return "Not a Student";
+			case "Millenials (23-37)":
+				return "Millennials (23-37)";
+			case "Centennials (18-22)":
+				return "Generation Z (18-22)";
 			default:
 				return name;
 		}

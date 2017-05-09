@@ -55,15 +55,11 @@ class ChartFilterGroup extends React.Component {
 				<svg width="100%" height={(this.state.height) * charts.length + spaceBetweenAllAndFilters} className="chart-filter-group" ref="renderingArea">{charts}</svg>
 				<ReactTooltip>
 					{ tooltipSettings &&
-						<div className="tooltip">
-							<h5 className="tooltip__title" style={{color :tooltipSettings.elemColor}}>{ tooltipSettings.title }</h5>
-			                <h5 className="tooltip__text">
-			                    <span className="tooltip__text__label">Number of Respondents:</span>
-			                    <span className="tooltip__text__value">{ tooltipSettings.rawVal }</span>
-			                </h5>
-			                <h5 className="tooltip__text">
-			                    <span className="tooltip__text__label">Percent of Total:</span>
-			                    <span className="tooltip__text__value">{ tooltipSettings.percentVal }</span>
+						<div className="interactive-tooltip">
+							<h5 className="interactive-tooltip__title" style={{color :tooltipSettings.elemColor}}>{ tooltipSettings.title }</h5>
+			                <h5 className="interactive-tooltip__text">
+			                    <span className="interactive-tooltip__text__label">Percent of Total:</span>
+			                    <span className="interactive-tooltip__text__value">{ tooltipSettings.percentVal }</span>
 			                </h5>
 			            </div>
 					}

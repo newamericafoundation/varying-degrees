@@ -20,16 +20,22 @@ class EmbedGenerator extends React.Component {
 
   render() {
     const { topic, question, subquestion, filter } = this.props;
+    let chartGroup;
 
-    console.log(topic, question, subquestion, filter);
     const currVizSettings = vizSettings[topic].questions[question];
-    console.log("in embed generator");
+    
+    if (subquestion != "none") {
+      chartGroup = <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
+    } else {
+      chartGroup = <ChartSubquestionGroup settingsObject={currVizSettings} defaultFilter={filterSettings[filter]}/>
+    }
+
     return (
       <div className="chart-module embed-generator">
         <div className="chart-module__title-block">
           <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
         </div>
-        <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
+        { chartGroup }
         <Legend variableSettings={currVizSettings.variables} />
         <div className="chart-module__footer">
           <h5 className="chart-module__footer__note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>

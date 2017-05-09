@@ -22,16 +22,21 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
             charts.push(
                 <div className="chart-module__chart-container" key={i}>
                     <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
-        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={varSettings} subquestionTitle={subquestionSettings.text}/>
+        		    <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={varSettings} subquestionTitle={subquestionSettings.text} defaultFilter={defaultFilter} />
                 </div>
             )
     	})
-        return <div className="chart-module__charts has-subquestions">{ charts }</div>
+        return (
+            <div className="chart-module__charts has-subquestions">
+                <ChartShareButtons settingsObject={settingsObject} subquestionIndex="none" />
+                { charts }
+            </div>
+        )
     } else {
         return (
             <div className="chart-module__charts">
                 <ChartShareButtons settingsObject={settingsObject} subquestionIndex="none" />
-                <ChartDataContainer dataSourceName={settingsObject.collection} variableSettings={settingsObject.variables} />
+                <ChartDataContainer dataSourceName={settingsObject.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter} />
             </div>
         )
     }
