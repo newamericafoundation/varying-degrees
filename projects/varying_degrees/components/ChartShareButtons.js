@@ -45,14 +45,15 @@ class ChartShare extends React.Component {
         const {topic, question, subquestionIndex, filter} = this.props;
         // console.log("in render");
         // console.log(this.props);
-        const filterId = filter.id ? filter.id : "all";
+        const filterId = filter.id || +filter.id == 0 ? filter.id : "all";
 
-        const embedPopupUrl = "http://na-data-projects-interactives.s3-website-us-west-2.amazonaws.com/embed/" + topic + "/" + question + "/" + subquestionIndex + "/" + filterId;
+        const embedPopupUrl = "https://varyingdegrees.newamerica.org/?topic=" + topic + "&question=" + question + "&subquestion=" + subquestionIndex + "&filter=" + filterId;
         const iframeCode = "<iframe src='" + embedPopupUrl + "' width='100%' height='500px'></iframe>";
+        const imageUrl = "https://na-data-projects.s3.amazonaws.com/images/varyingdegrees/" + topic + "/" + question + "/" + subquestionIndex + "/" + filterId + ".png"
         return (
             <div className="chart-module__share">
                 <a className="chart-module__share__button embed" onClick={() => { console.log("clicked!"); return this.showEmbedPopup();}}><EmbedIcon /></a>
-                <a href="http://static/img/chart_snapshots/image.jpeg" target="_blank" className="chart-module__share__button download"><DownloadIcon /></a>
+                <a href={ imageUrl } target="_blank" className="chart-module__share__button download"><DownloadIcon /></a>
                 {showEmbedPopup &&
                     <div className="chart-module__share__embed-popup" ref="embed-popup" onClick={(e) => { e.stopPropagation(); e.nativeEvent.stopImmediatePropagation(); }}>{ iframeCode }</div>
                 }

@@ -5,7 +5,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './store/configureStore';
-import RootSubmodule from './containers/RootSubmodule';
+import RootEmbed from './containers/RootEmbed';
 require('../../newamerica-styles.js');
 require('./styles/index.scss');
 
@@ -14,7 +14,7 @@ const store = configureStore();
 
 render(
     <AppContainer>
-        <RootSubmodule store={store} />
+        <RootEmbed store={store} />
     </AppContainer>,
     document.getElementById('root')
 );

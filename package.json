@@ -6,6 +6,7 @@
   "scripts": {
     "start-dev": "node server-dev",
     "build": "npm run build-standalone | npm run build-submodule",
+    "build-embed": "BUILD_TYPE=embed webpack --config ./webpack.production.config.js --progress --profile --colors",
     "build-standalone": "BUILD_TYPE=standalone webpack --config ./webpack.production.config.js --progress --profile --colors",
     "build-submodule": "BUILD_TYPE=submodule webpack --config ./webpack.production.config.js --progress --profile --colors",
     "start": "NODE_ENV=production node server"
@@ -18,6 +19,7 @@
   "author": "Jean-Pierre Sierens",
   "license": "MIT",
   "dependencies": {
+    "d3": "^4.8.0",
     "d3-format": "^1.2.0",
     "d3-scale": "^1.0.5",
     "file-loader": "^0.9.0",
@@ -25,6 +27,7 @@
     "jquery": "^3.2.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-faux-dom": "^3.1.0",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
