@@ -22,14 +22,12 @@ class ChartDataContainer extends React.Component {
 
   loadData(props) {
     const { fetchedData, dataSourceName, fetchDataCollection } = props;
-    console.log("loading data for " + dataSourceName);
+
     if (fetchedData[dataSourceName]) {
-      console.log("data already fetched for " + dataSourceName);
       this.dataObject = fetchedData[dataSourceName];
     } else {
       fetchDataCollection(dataSourceName);
     }
-    
   }
 
   render() {

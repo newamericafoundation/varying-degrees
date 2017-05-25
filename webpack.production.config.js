@@ -12,7 +12,7 @@ var PROJECT_DIR = path.resolve(__dirname, 'projects');
 var AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
 var AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 var DATA_PROJECTS_S3_BUCKET_NAME = process.env.DATA_PROJECTS_S3_BUCKET_NAME;
-var DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME = process.env.DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME;
+var EMBED_S3_BUCKET_NAME = process.env.EMBED_S3_BUCKET_NAME;
 
 var BUILD_TYPE = process.env.BUILD_TYPE;
 
@@ -74,7 +74,7 @@ module.exports = {
             region: 'us-west-2'
           },
           s3UploadOptions: {
-            Bucket: BUILD_TYPE == "standalone" ? DATA_PROJECTS_INTERACTIVES_S3_BUCKET_NAME : DATA_PROJECTS_S3_BUCKET_NAME
+            Bucket: BUILD_TYPE == "submodule" ? DATA_PROJECTS_S3_BUCKET_NAME : EMBED_S3_BUCKET_NAME;
           }
         })
     ],

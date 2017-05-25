@@ -1,29 +1,28 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import vizSettings from "../vizSettings.js";
 import { connect } from 'react-redux';
 import filterSettings from "../filterSettings.js";
 import Legend from './Legend';
 import ChartSubquestionGroup from './ChartSubquestionGroup';
 import NewAmericaIcon from '../assets/img/newamerica.js';
-
-// require('../styles/index.scss');
+import getQueryVariable from '../utilities/get_query_variable';
 
 class EmbedGenerator extends React.Component {
-  constructor() {
-    super();
-  }
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    console.log("done!");
-    // window.callPhantom('takeShot');
+    this.topic = getQueryVariable("topic");
+    this.question = getQueryVariable("question");
+    this.subquestion = getQueryVariable("subquestion");
+    this.filter = getQueryVariable("filter");
   }
 
   render() {
-    const { topic, question, subquestion, filter } = this.props;
+    const {topic, question, subquestion, filter} = this;
     let chartGroup;
 
     const currVizSettings = vizSettings[topic].questions[question];
-    
+  
     if (subquestion != "none") {
       chartGroup = <ChartSubquestionGroup settingsObject={currVizSettings} defaultSubquestion={subquestion} defaultFilter={filterSettings[filter]}/>
     } else {
@@ -36,7 +35,9 @@ class EmbedGenerator extends React.Component {
           <h1 className="chart-module__title-block__title">{currVizSettings.text}</h1>
         </div>
         { chartGroup }
-        <Legend variableSettings={currVizSettings.variables} />
+        { currVizSettings.variables &&
+          <Legend variableSettings={currVizSettings.variables} />
+        }
         <div className="chart-module__footer">
           <h5 className="chart-module__footer__note">Source: New America's annual public opinion survey of higher education. Base: {currVizSettings.base}</h5>
           <a className="chart-module__footer__image" href="https://www.newamerica.org">
@@ -48,16 +49,4 @@ class EmbedGenerator extends React.Component {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
-    return {
-      topic: ownProps.params.topic,
-      question: ownProps.params.question,
-      subquestion: ownProps.params.subquestion,
-      filter: ownProps.params.filter,
-    };
-};
-
-export default connect(
-  mapStateToProps,
-)(EmbedGenerator);
+export default EmbedGenerator;
