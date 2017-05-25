@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import EmbedGenerator from '../components/EmbedGeneratorStatic';
+import EmbedGenerator from '../components/EmbedGenerator';
 import $ from 'jquery';
 
-export default class Root extends Component {
+export default class Root extends React.Component {
     constructor() {
         super()
-    }
-
-    componentDidMount() {
-        $("#root").siblings(".dataviz__loading-gif").hide();
-        $("#root").css("visibility", "visible").css("min-height","none");
     }
 
     render() {

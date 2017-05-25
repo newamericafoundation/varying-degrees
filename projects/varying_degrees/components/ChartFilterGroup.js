@@ -34,14 +34,14 @@ class ChartFilterGroup extends React.Component {
 		const filterObject = defaultFilter ? defaultFilter : currFilter;
 		
 		let charts = [];
-		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings}  mouseoverFunc={this.mouseover}/>);
+		charts.push(<Chart key="0" yTransform="0" width={this.state.width} height={this.state.height} data={data[0]} variableSettings={variableSettings} />);
 
 		if (filterObject.value != "all") {
 			const {variableIndices} = filterObject;
 
 			let i = 1;
 			for (let index of variableIndices) {
-				charts.push(<Chart key={index} yTransform={i*this.state.height + spaceBetweenAllAndFilters} width={this.state.width} height={this.state.height} data={data[index]} variableSettings={variableSettings} mouseoverFunc={this.mouseover}/>)
+				charts.push(<Chart key={index} yTransform={i*this.state.height + spaceBetweenAllAndFilters} width={this.state.width} height={this.state.height} data={data[index]} variableSettings={variableSettings} />)
 				i++;
 			}
 			ReactTooltip.rebuild();
@@ -66,10 +66,6 @@ class ChartFilterGroup extends React.Component {
 				</ReactTooltip>
 			</div>
 		)
-	}
-
-	mouseover() {
-		console.log("mousing over!");
 	}
 
 	resize() {

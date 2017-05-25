@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
 import EmbedIcon from '../assets/img/embed';
@@ -12,17 +12,7 @@ class ChartShare extends React.Component {
         this.state = {
             showEmbedPopup: false,
         }
-
     }
-
-    // componentWillUpdate(nextProps) {
-    //     const {topic, question, subquestionIndex} = nextProps;
-    //     console.log("in component will update")
-    //     console.log(nextProps)
-    //     // this.setState({
-    //     //     embedPopupUrl:"http://localhost:3333/embed/" + topic + "/" + question + "/" + subquestionIndex + "/" + "0"
-    //     // })
-    // }
 
     showEmbedPopup() {
         $(document).click((e) => {this.hideEmbedPopup(e); });
@@ -32,8 +22,6 @@ class ChartShare extends React.Component {
     }
 
     hideEmbedPopup(e) {
-        console.log("hiding")
-        console.log(e);
         this.setState({
             showEmbedPopup: false
         });
@@ -43,8 +31,7 @@ class ChartShare extends React.Component {
     render() {
         const {showEmbedPopup} = this.state;
         const {topic, question, subquestionIndex, filter} = this.props;
-        // console.log("in render");
-        // console.log(this.props);
+
         const filterId = filter.id || +filter.id == 0 ? filter.id : "all";
 
         const embedPopupUrl = "https://varyingdegrees.newamerica.org/?topic=" + topic + "&question=" + question + "&subquestion=" + subquestionIndex + "&filter=" + filterId;
@@ -63,8 +50,6 @@ class ChartShare extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    // console.log("in map state to props")
-    // console.log(state)
     return {
       topic: state.topic,
       question: state.question,

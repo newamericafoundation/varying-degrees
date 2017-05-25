@@ -9,7 +9,6 @@ import RootSubmodule from './containers/RootSubmodule';
 require('../../newamerica-styles.js');
 require('./styles/index.scss');
 
-
 const store = configureStore();
 
 render(

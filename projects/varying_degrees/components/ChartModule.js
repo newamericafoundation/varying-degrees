@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import vizSettings from "../vizSettings.js";
 import { connect } from 'react-redux';
 import Filter from './Filter';
@@ -14,7 +14,7 @@ const ChartModule = ({ activeTopicIndex, activeQuestionIndex, screenSize, fetche
     classList += screenSize == "medium" ? " mobile" : "";
     let totalRespondents = null;
 
-    if (!currVizSettings.subquestions && currVizSettings.collection && fetchedData[currVizSettings.collection]) {
+    if (!currVizSettings.subquestions && currVizSettings.collection && fetchedData[currVizSettings.collection] && fetchedData[currVizSettings.collection].data) {
       totalRespondents = <span className="chart-module__title-block__total-count">(n={fetchedData[currVizSettings.collection].data[0].total_base})</span>;
     }
 

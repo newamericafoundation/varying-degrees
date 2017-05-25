@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import SurveyExplorer from './SurveyExplorer';
 import $ from 'jquery';
 
-export default class Root extends Component {
+export default class Root extends React.Component {
     constructor() {
         super()
     }

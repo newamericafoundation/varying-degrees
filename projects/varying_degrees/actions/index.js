@@ -3,7 +3,6 @@ import fetch from 'isomorphic-fetch'
 import * as types from './types';
 
 const dbPath = process.env.NODE_ENV == 'production' ? 'https://data-projects-backend.herokuapp.com/api/' : 'http://localhost:3000/api/';
-console.log(dbPath);
 
 export function changeFilter(newFilter) {
     return {
@@ -57,14 +56,8 @@ export function fetchData(collection) {
     return fetch(dbPath + collection)
       .then(response => { return response.json()})
       .then(json => {
-        console.log("this is the json response")
-        console.log(json);
-
         dispatch(receiveData(collection, json))
       })
-
-      // In a real world app, you also want to
-      // catch any error in the network call.
   }
 }
 

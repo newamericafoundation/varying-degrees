@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { changeTopicWrapper } from '../actions';
 import Question from './Question';

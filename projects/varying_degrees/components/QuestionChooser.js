@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Topic from './Topic';
 import { connect } from 'react-redux';
 import vizSettings from "../vizSettings.js"
@@ -23,7 +23,6 @@ const renderMobile = ({currTopic, currQuestion, onTopicChange, onQuestionChange}
 		}
     });
 
-    console.log(topicList[currTopic].label);
     return (
     	
     	<ul className="question-chooser-mobile">
@@ -68,8 +67,6 @@ const renderDesktop = () => {
 }
 
 const QuestionChooser = (props) => {
-	console.log("in question chooser!")
-
 	if (props.screenSize == "medium") {
 		return renderMobile(props);
 	} else {

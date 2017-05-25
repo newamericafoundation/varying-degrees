@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { filterTable } from '../actions';
 import QuestionChooser from '../components/QuestionChooser';
 import ChartModule from '../components/ChartModule';
 import breakpoints from '../utilities/breakpoints.js';
 import { setScreenSize } from '../actions';
 import $ from 'jquery';
 
-class SurveyExplorer extends Component {
+class SurveyExplorer extends React.Component {
 	constructor() {
 		super();
 

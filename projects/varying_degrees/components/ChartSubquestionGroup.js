@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import vizSettings from "../vizSettings.js";
 import { connect } from 'react-redux';
 import ChartShareButtons from './ChartShareButtons';
@@ -7,9 +7,12 @@ import ChartDataContainer from '../containers/ChartDataContainer';
 const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilter }) => {
     if (defaultSubquestion) {
         const subquestionSettings = settingsObject.subquestions[defaultSubquestion];
+
+        let varSettings = settingsObject.variables || subquestionSettings.variables;
+
         return (
             <div className="chart-module__charts">
-                <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={settingsObject.variables} defaultFilter={defaultFilter} subquestionTitle={subquestionSettings.text}/>
+                <ChartDataContainer dataSourceName={subquestionSettings.collection} variableSettings={varSettings} defaultFilter={defaultFilter} subquestionTitle={subquestionSettings.text}/>
             </div>
         )
     } 
@@ -18,7 +21,6 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
         let charts = [];
     	settingsObject.subquestions.forEach((subquestionSettings, i) => {
             let varSettings = settingsObject.variables || subquestionSettings.variables;
-            console.log(varSettings)
             charts.push(
                 <div className="chart-module__chart-container" key={i}>
                     <ChartShareButtons settingsObject={settingsObject} subquestionIndex={i} />
@@ -40,9 +42,6 @@ const ChartSubquestionGroup = ({ settingsObject, defaultSubquestion, defaultFilt
             </div>
         )
     }
-
-    
-    
 };
 
 export default ChartSubquestionGroup;
