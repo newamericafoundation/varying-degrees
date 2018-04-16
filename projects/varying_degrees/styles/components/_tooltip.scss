@@ -19,8 +19,10 @@
 
 	&__title {
 		font-size: 12px;
-		font-weight: bold;
+		font-weight: bold !important;
 		margin-bottom: 0px;
+		-webkit-margin-before: 0px;
+		-webkit-margin-after: 0px;
 	}
 
 	&__text {
@@ -31,7 +33,7 @@
 		}
 		&__label {
 			color: palette-get(na-black);
-			font-weight: bold;
+			font-weight: bold !important;
 			padding-right: 7px;
 		}
 		&__value {

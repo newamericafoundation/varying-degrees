@@ -3,11 +3,19 @@
 	cursor: pointer;
 	width: 30%;
 	display: table-cell;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-padding-start: 0px;
+
 	&__topic {
 		width: 100%;
 		display: block;
 		border: 1px solid palette-get(na-black-10);
 		border-bottom: none;
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+
+
 
 		&:last-child {
 			border-bottom: 1px solid palette-get(na-black-10);
@@ -15,11 +23,13 @@
 
 		&__label {
 			width: 100%;
-			
 			margin-bottom: 0px;
 			padding: 15px;
-			font-size: 16px;
-			
+			font-size: 16px !important;
+			font-weight: normal !important;
+			font-family: circular;
+			-webkit-margin-before: 0px;
+			-webkit-margin-after: 0px;
 
 			.active & {
 				border-left: none;
@@ -36,11 +46,12 @@
 			margin-left: 0px;
 			max-height: 0;
 			visibility: none;
-    		-webkit-transition: max-height 500ms ease-out;
-		    -moz-transition: max-height 500ms ease-out;
-		    -o-transition: max-height 500ms ease-out;
-		    transition: max-height 500ms ease-out;
-    		overflow: hidden;
+  		-webkit-transition: max-height 500ms ease-out;
+	    -moz-transition: max-height 500ms ease-out;
+	    -o-transition: max-height 500ms ease-out;
+	    transition: max-height 500ms ease-out;
+  		overflow: hidden;
+			-webkit-padding-start: 0px;
 
 			.active & {
 				visibility: visible;
@@ -59,6 +70,7 @@
 		background-color: palette-get(na-black-10);
 		color: palette-get(na-black-70);
 		width: 100%;
+		margin: 0px !important;
 
 		&:hover {
 			background-color: palette-get(na-black-30);

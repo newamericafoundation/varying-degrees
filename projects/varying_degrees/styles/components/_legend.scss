@@ -6,20 +6,27 @@
 	}
 	&__cell {
 		padding: 0px;
+		margin-bottom: 7px !important;
+		cursor: auto !important;
 
 		&__color-swatch-container, &__label, &__val-count {
 			float: left;
 		}
 
 		&__color-swatch-container {
-			margin-top: 3px;
+			margin-left: 0px !important;
+			margin-top: 3px !important;
 		}
 
 		&__label {
-			padding: 0px 15px 0px 7px;
+			padding: 0px 18px 0px 7px;
+			font-weight: normal;
 			margin-bottom: 0px;
 			font-size: 12px;
+			opacity: .8;
 			color: palette-get(na-black-70);
+			-webkit-margin-before: 0px;
+			-webkit-margin-after: 0px;
 		}
 
 		&.disabled {
