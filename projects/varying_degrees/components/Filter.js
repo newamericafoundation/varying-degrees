@@ -2,33 +2,34 @@ import React from 'react';
 import filterSettings from "../filterSettings.js";
 import { changeFilter } from '../actions';
 import { connect } from 'react-redux';
-const Select = require('react-select');
+import Select from 'react-select';
 import $ from 'jquery';
 
 const Filter = ({ currFilter, onFilterChange }) => {
   let filterOptions = [<option key="-1" selected disabled>Filter by</option>]
 
+
   return (
     <div className="filter">
-      <Select 
+      <Select
         name='filter'
         options={filterSettings}
         value={currFilter.value}
-        onChange={(filter) => { 
+        onChange={(filter) => {
           let newVal = filter && filter.value ? getFilterSettingsObject(filter.value) : { value:"all" };
-          return onFilterChange(newVal); 
+          return onFilterChange(newVal);
         }}
         searchable={false}
         scrollMenuIntoView={false}
         placeholder="Filter by"
-        clearRenderer={function() { 
+        clearRenderer={function() {
           if(this.value == "all") {
             $(".Select-clear-zone").css("display", "none");
             return "";
           } else {
             $(".Select-clear-zone").css("display", "table-cell");
             return "Clear Filter"
-          } 
+          }
         }}
       />
     </div>

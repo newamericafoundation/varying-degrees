@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 import * as types from './types';
 
-const dbPath = process.env.NODE_ENV == 'production' ? 'https://data-projects-backend.herokuapp.com/api/' : 'http://localhost:3000/api/';
+const dbPath = process.env.NODE_ENV == 'production' ? 'https://varying-degrees.herokuapp.com/api/' : 'http://localhost:3000/api/';
 
 export function changeFilter(newFilter) {
     return {
@@ -34,16 +34,16 @@ export function changeQuestion(newQuestion) {
 }
 
 export function requestData(collection) {
-   return { 
-        type: types.REQUEST_DATA, 
+   return {
+        type: types.REQUEST_DATA,
         collection
    }
 }
 
 export function receiveData(collection, json) {
-    return { 
+    return {
         type: types.RECEIVE_DATA,
-        collection, 
+        collection,
         data: json
     }
 }
@@ -62,16 +62,15 @@ export function fetchData(collection) {
 }
 
 export function setTooltip(settings) {
-    return { 
+    return {
         type: types.SET_TOOLTIP,
         settings
     }
 }
 
 export function setScreenSize(size) {
-    return { 
+    return {
         type: types.SET_SCREEN_SIZE,
         size
     }
 }
-

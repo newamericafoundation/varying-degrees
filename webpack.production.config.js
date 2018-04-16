@@ -65,20 +65,20 @@ module.exports = {
         }),
 
         new S3Plugin({
-          // Only upload css and js 
+          // Only upload css and js
           include: /.*\.(scss|css|js)/,
-          // s3Options are required 
+          // s3Options are required
           s3Options: {
             accessKeyId: AWS_ACCESS_KEY_ID,
             secretAccessKey: AWS_SECRET_ACCESS_KEY,
             region: 'us-west-2'
           },
           s3UploadOptions: {
-            Bucket: BUILD_TYPE == "submodule" ? DATA_PROJECTS_S3_BUCKET_NAME : EMBED_S3_BUCKET_NAME;
+            Bucket: BUILD_TYPE == "submodule" ? DATA_PROJECTS_S3_BUCKET_NAME : EMBED_S3_BUCKET_NAME
           }
         })
     ],
-    
+
 
     module: {
         // loaders handle the assets, like transforming sass to css or jsx to js.
@@ -94,7 +94,7 @@ module.exports = {
             // we extract the styles into their own .css file instead of having
             // them inside the js.
             loader: 'style!css!sass'
-        }, 
+        },
         {
             test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
             loader: 'url?limit=10000&mimetype=application/font-woff'
